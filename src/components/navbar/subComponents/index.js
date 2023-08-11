@@ -12,7 +12,11 @@ export const muiProps = {
     sx: {
       mr: 5,
       display: {
-        sm: "block",
+        xl: "none",
+        lg: "none",
+        md: "none",
+        sm: "none",
+        xs: "block",
       },
     },
   },
