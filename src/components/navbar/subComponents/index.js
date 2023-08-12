@@ -19,6 +19,7 @@ export const muiProps = {
         xs: "block",
       },
     },
+    className: "pop-out",
   },
 
   typography: {
@@ -30,6 +31,7 @@ export const muiProps = {
         sm: "block",
       },
     },
+    className: "brand",
   },
 
   box: {
