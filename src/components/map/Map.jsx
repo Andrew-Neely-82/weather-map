@@ -21,7 +21,7 @@ const Map = () => {
             latitude: 30.2672,
             zoom: 6,
           }}
-          style={{ width: 600, height: 400 }}
+          style={{ width: 600, height: 400, borderRadius: "1.5rem" }}
           mapStyle={mapStyle}
           reuseMaps
         />
