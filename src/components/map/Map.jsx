@@ -13,6 +13,7 @@ const Map = () => {
   return (
     <div className="Map__">
       <div className="Map__container">
+        <h3>Global Map</h3>
         <Mapbox
           mapboxAccessToken={accessToken}
           initialViewState={{

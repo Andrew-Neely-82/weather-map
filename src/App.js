@@ -1,5 +1,5 @@
+import { ForecastContainer, Navbar } from "./components/export";
 import { getLocation } from "./util/geolocation";
-import { Navbar } from "./components/export";
 import Map from "./components/map/Map";
 import "./App.scss";
 
@@ -8,6 +8,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <div className="content">
+        <ForecastContainer />
         <Map />
       </div>
     </div>
