@@ -2,6 +2,7 @@ import { ForecastContainer, Navbar } from "./components/export";
 import { getLocation } from "./util/geolocation";
 import Map from "./components/map/Map";
 import "./App.scss";
+import ChanceOfRain from "./components/chanceOfRain/ChanceOfRain";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <div className="content">
         <ForecastContainer />
         <Map />
+        <ChanceOfRain />
       </div>
     </div>
   );
