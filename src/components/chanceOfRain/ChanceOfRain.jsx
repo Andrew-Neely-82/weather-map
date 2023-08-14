@@ -1,15 +1,8 @@
 import { Box, Stack } from "@mui/material";
 import RainTimeSlider from "./RainTime";
-import { useState } from "react";
 import "./style.scss";
 
 const ChanceOfRain = () => {
-  const [value, setValue] = useState(null);
-
-  const handleValue = (val) => {
-    setValue(val);
-  };
-
   return (
     <div className="ChanceOfRain__">
       <h3 className="ChanceOfRain__title">Chance of Rain</h3>
@@ -27,9 +20,3 @@ const ChanceOfRain = () => {
 };
 
 export default ChanceOfRain;
-
-// ! Notes
-
-// * https://mui.com/material-ui/react-slider/ - sliders
-// * Use Mui Sliders / make vertical and adjust with rain percentages
-// * bubble is capable of display: none

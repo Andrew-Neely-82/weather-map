@@ -8,11 +8,16 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
+      {/* Wrapper */}
       <div className="content">
-        <ForecastContainer />
+        {/* Top half */}
         <div className="map-rain-container">
-          <Map />
+          <ForecastContainer />
           <ChanceOfRain />
+        </div>
+        {/* Bottom Half */}
+        <div className="GlobalContainer__">
+          <Map />
         </div>
       </div>
     </div>

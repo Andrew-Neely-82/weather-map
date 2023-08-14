@@ -44,3 +44,29 @@ export const muiProps = {
     },
   },
 };
+
+export const searchToggleProps = (props) => {
+  return {
+    container: {
+      className: "toggle/search",
+      style: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      },
+    },
+    search: {
+      style: props.searchTheme,
+      sx: {
+        color: "white",
+        borderRadius: "10rem",
+      },
+    },
+    input: {
+      placeholder: "Search City...",
+      style: {
+        width: "20rem",
+      },
+    },
+  };
+};

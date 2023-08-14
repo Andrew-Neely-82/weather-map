@@ -1,11 +1,10 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import { Search, SearchIconWrapper, StyledInputBase } from "../Search";
+import { Toolbar, Typography } from "@mui/material";
 import { DarkModeContext } from "../../../context/darkmode";
-import SearchIcon from "@mui/icons-material/Search";
+import { DarkModeSwitch, SearchAndToggle } from "./import";
 import MenuIcon from "@mui/icons-material/Menu";
-import DarkModeSwitch from "./DarkModeSwitch";
-import { muiProps } from "./index";
 import { useContext } from "react";
+import { muiProps } from "./index";
+import { AppBar, Button, Box, IconButton } from "../../../mui/export";
 
 const NavbarMain = (props) => {
   const navItems = ["Home", "About", "Contact"];
@@ -24,24 +23,11 @@ const NavbarMain = (props) => {
         <Typography {...muiProps.typography}>Weather Map</Typography>
         <Box {...muiProps.box} className="buttons">
           {navItems.map((item) => (
-            <Button
-              key={item}
-              sx={{
-                color: "#fff",
-              }}>
-              {item}
-            </Button>
+            <Button key={item} sx={{ color: "#fff" }} text={item} />
           ))}
         </Box>
-        <div className="toggle/search" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <DarkModeSwitch checked={!darkMode} onChange={toggleDarkMode} />
-          <Search style={searchTheme} sx={{ color: "white", borderRadius: "10rem" }}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
-          </Search>
-        </div>
+        <SearchAndToggle searchTheme={searchTheme}></SearchAndToggle>
+        <DarkModeSwitch checked={!darkMode} onChange={toggleDarkMode} />
       </Toolbar>
     </AppBar>
   );
