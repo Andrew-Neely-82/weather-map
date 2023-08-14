@@ -1,10 +1,31 @@
-.RainTime__ {
+.ChanceOfRain__ {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: center;
   align-items: center;
-  rotate: 270deg;
 
-  p {
-    rotate: 90deg;
+  &wrapper {
+    display: flex;
+    align-items: center !important;
+
+    .MuiStack-Root {
+      display: flex;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+
+    &-span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
+}
+
+.MuiSlider-thumb {
+  display: none !important;
+}
+
+.MuiSlider-rail,
+.MuiSlider-track {
+  color: lightblue !important;
 }

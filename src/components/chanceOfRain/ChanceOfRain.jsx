@@ -1,28 +1,25 @@
-import { VolumeDown, VolumeUp } from "@mui/icons-material";
-import { Box, Slider, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
+import RainTimeSlider from "./RainTime";
 import { useState } from "react";
-import RainTime from "./RainTime";
 import "./style.scss";
 
 const ChanceOfRain = () => {
-  const [value, setValue] = useState(30);
+  const [value, setValue] = useState(null);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleValue = (val) => {
+    setValue(val);
   };
 
   return (
     <div className="ChanceOfRain__">
-      <span>Chance of Rain</span>
-      {/* insert chart */}
+      <h3 className="ChanceOfRain__title">Chance of Rain</h3>
       <Stack direction="column">
-        <Box sx={{ width: 200 }}>
-          <RainTime />
-          {/* <Slider disabled defaultValue={58} aria-label="Disabled slider" />
-        <Slider disabled defaultValue={30} aria-label="Disabled slider" />
-        <Slider disabled defaultValue={30} aria-label="Disabled slider" />
-        <Slider disabled defaultValue={30} aria-label="Disabled slider" />
-      <Slider disabled defaultValue={30} aria-label="Disabled slider" /> */}
+        <Box sx={{ display: "flex", justifyContent: "space-between", width: 200 }}>
+          <RainTimeSlider time="10am" percent={"5"} />
+          <RainTimeSlider time="11am" percent={"10"} />
+          <RainTimeSlider time="1pm" percent={"16"} />
+          <RainTimeSlider time="2pm" percent={"36"} />
+          <RainTimeSlider time="3pm" percent={"64"} />
         </Box>
       </Stack>
     </div>

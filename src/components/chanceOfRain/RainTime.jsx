@@ -1,11 +1,19 @@
-import { Slider } from "@mui/material";
+import { Slider, Stack } from "@mui/material";
+import { propValues } from "./index";
 
-const RainTime = () => {
+const RainTimeSlider = ({ percent, time }) => {
+  const props = propValues(percent);
+
   return (
-    <div className="RainTime__">
-      <Slider disabled defaultValue={30} aria-label="Disabled slider" />
-      <p className="time time-1">10am</p>
+    <div className="ChanceOfRain__wrapper">
+      <Stack {...props.stack}>
+        <Slider {...props.slider} aria-label="Temperature" disabled />
+        <div className="ChanceOfRain__wrapper-span">
+          <span>{time}</span>
+        </div>
+      </Stack>
     </div>
   );
 };
-export default RainTime;
+
+export default RainTimeSlider;
