@@ -21,3 +21,18 @@ export const handleDrawer = (handleDrawerToggle) => {
     </Box>
   );
 };
+
+export const drawerPropsFunc = (container, mobileOpen, handleDrawerToggle, drawerWidth) => {
+  return {
+    container: container,
+    variant: "temporary",
+    open: mobileOpen,
+    onClose: handleDrawerToggle,
+    ModalProps: true,
+    sx: {
+      display: { xs: "block", sm: "none" },
+      "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
+      background: "#121212 !important",
+    },
+  };
+};

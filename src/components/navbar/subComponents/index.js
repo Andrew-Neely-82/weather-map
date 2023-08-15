@@ -32,6 +32,7 @@ export const muiProps = {
       },
     },
     className: "brand",
+    text: "Weather Map",
   },
 
   box: {
@@ -43,6 +44,18 @@ export const muiProps = {
       xs: "none",
     },
   },
+};
+
+export function toolPropsFunc(darkMode, themeLight, themeDark) {
+  return {
+    style: darkMode ? themeLight : themeDark,
+  };
+}
+
+export const buttonPropsFunc = (props) => {
+  return {
+    onClick: props.handleDrawerToggle,
+  };
 };
 
 export const searchToggleProps = (props) => {
@@ -68,5 +81,12 @@ export const searchToggleProps = (props) => {
         width: "20rem",
       },
     },
+  };
+};
+
+export const switchPropsFunc = (darkMode, toggleDarkMode) => {
+  return {
+    checked: !darkMode,
+    onChange: toggleDarkMode,
   };
 };
