@@ -4,10 +4,11 @@
 
 .content {
   margin-top: 64px;
+  margin-inline: 2rem;
 }
 
-.map-rain-container {
+.forecast-rain-container {
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: flex-start;
 }

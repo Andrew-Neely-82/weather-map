@@ -4,7 +4,7 @@ const Days = ({ day, condition, temp }) => {
       <span>{day}</span>
       <hr />
       {condition}
-      <span>{temp}°</span>
+      <span>{temp}°F</span>
     </div>
   );
 };

@@ -1,18 +1,21 @@
-import { Today } from "@mui/icons-material";
-import SevenDay from "./sevenDay/SevenDay";
-import Tomorrow from "./tomorrow/Tomorrow";
+import { Today, Tomorrow, SevenDay } from "./import";
 import { useState } from "react";
 import Switch from "./switch/Switch";
+import ForecastOptions from "./forecastOptions/ForecastOptions";
 
 const ForecastContainer = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="ForecastContainer__">
+      <div className="ForecastContainer__buttons-container">
+        <ForecastOptions />
+
+        <Switch />
+      </div>
       <div className="ForecastContainer__container">
         {/* Today, Tomorrow, Next 7 days */}
         {/* switch */}
-        <Switch />
       </div>
       <Today />
       <Tomorrow />

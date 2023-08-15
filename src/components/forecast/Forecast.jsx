@@ -1,9 +1,9 @@
 import ForecastContainer from "./forecastContainer/ForecastContainer";
-import './style.scss'
+import "./style.scss";
 
 const Forecast = () => {
   return (
-    <div>
+    <div className="Forecast__">
       <ForecastContainer />
     </div>
   );

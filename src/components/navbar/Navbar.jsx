@@ -2,6 +2,7 @@ import { DarkModeContext } from "../../context/darkmode";
 import { Box, CssBaseline, Drawer } from "@mui/material";
 import { drawerPropsFunc, handleDrawer } from "./index";
 import { ThemeProvider } from "@mui/material/styles";
+import { getLocation } from "../../util/geolocation";
 import NavbarMain from "./subComponents/NavbarMain";
 import { darkTheme, lightTheme } from "./themes";
 import { useContext, useState } from "react";

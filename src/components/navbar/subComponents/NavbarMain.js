@@ -30,6 +30,7 @@ const NavbarMain = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography {...muiProps.typography} />
+        <Button>Get Weather</Button>
         <Box {...muiProps.box} className="buttons">
           {navItems.map((item) => (
             <Button key={item} sx={{ color: "#fff" }} text={item} />
