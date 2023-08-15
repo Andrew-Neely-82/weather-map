@@ -1,4 +1,5 @@
 import ForecastContainer from "./forecastContainer/ForecastContainer";
+import './style.scss'
 
 const Forecast = () => {
   return (

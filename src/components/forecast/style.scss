@@ -1,0 +1,43 @@
+.ForecastContainer__ {
+  &container {
+    position: relative;
+
+    .forecast,
+    .air {
+      position: absolute;
+      top: 0.75rem;
+      color: #737277;
+      cursor: pointer;
+    }
+
+    .forecast {
+      left: 1rem;
+
+      &::before {
+        content: "test";
+        user-select: none;
+      }
+    }
+
+    .air {
+      position: absolute;
+      right: 1rem;
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.MuiSwitch-thumb {
+}
+
+// MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary
+// PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary
+// css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase
+
+// MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary
+// PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary
+// Mui-checked
+// css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase
