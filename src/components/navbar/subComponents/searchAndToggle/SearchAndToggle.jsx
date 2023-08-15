@@ -1,6 +1,6 @@
-import { Search, SearchIconWrapper, StyledInputBase } from "../Search";
+import { Search, SearchIconWrapper, StyledInputBase } from "../../functions/Search";
 import SearchIcon from "@mui/icons-material/Search";
-import { searchToggleProps } from "./index";
+import { searchToggleProps } from "../index";
 
 const SearchAndToggle = (props) => {
   const propList = searchToggleProps(props);

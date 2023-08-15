@@ -36,3 +36,9 @@ export const drawerPropsFunc = (container, mobileOpen, handleDrawerToggle, drawe
     },
   };
 };
+
+export function handleDrawerToggleFunc(setMobileOpen) {
+  return () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+}

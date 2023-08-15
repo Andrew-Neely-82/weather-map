@@ -1,22 +1,19 @@
+import { drawerPropsFunc, handleDrawer, handleDrawerToggleFunc } from "./functions/index";
+import NavbarMain from "./subComponents/navbarMain/NavbarMain";
 import { DarkModeContext } from "../../context/darkmode";
 import { Box, CssBaseline, Drawer } from "@mui/material";
-import { drawerPropsFunc, handleDrawer } from "./index";
 import { ThemeProvider } from "@mui/material/styles";
-import { getLocation } from "../../util/geolocation";
-import { darkTheme, lightTheme } from "./themes";
+import { darkTheme, lightTheme } from "./functions/themes";
 import { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
-import NavbarMain from "./subComponents/navbarMain/NavbarMain";
 
 const Navbar = (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { darkMode } = useContext(DarkModeContext);
   const { window } = props;
 
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
-  };
+  const handleDrawerToggle = handleDrawerToggleFunc(setMobileOpen);
 
   const drawer = handleDrawer(handleDrawerToggle);
   const drawerWidth = 240;

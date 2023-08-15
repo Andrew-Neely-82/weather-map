@@ -90,3 +90,4 @@ export const switchPropsFunc = (darkMode, toggleDarkMode) => {
     onChange: toggleDarkMode,
   };
 };
+
