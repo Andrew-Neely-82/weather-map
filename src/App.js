@@ -1,20 +1,19 @@
-import { ForecastContainer, Navbar } from "./components/export";
+import { Navbar, Forecast, Map } from "./components/export";
 import ChanceOfRain from "./components/chanceOfRain/ChanceOfRain";
-import Map from "./components/map/Map";
 import "./App.scss";
 
 const App = () => {
   return (
     <>
       <Navbar />
-      {/* Wrapper */}
+
       <div className="content">
-        {/* Top half */}
         <div className="forecast-rain-container">
-          <ForecastContainer />
+          {/* <ForecastContainer /> */}
+          <Forecast />
           <ChanceOfRain />
         </div>
-        {/* Bottom Half */}
+
         <div className="GlobalContainer__">
           <Map />
         </div>

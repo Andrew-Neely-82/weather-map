@@ -8,4 +8,5 @@ const Forecast = () => {
     </div>
   );
 };
+
 export default Forecast;

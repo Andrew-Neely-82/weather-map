@@ -3,11 +3,11 @@ import { Box, CssBaseline, Drawer } from "@mui/material";
 import { drawerPropsFunc, handleDrawer } from "./index";
 import { ThemeProvider } from "@mui/material/styles";
 import { getLocation } from "../../util/geolocation";
-import NavbarMain from "./subComponents/NavbarMain";
 import { darkTheme, lightTheme } from "./themes";
 import { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
+import NavbarMain from "./subComponents/navbarMain/NavbarMain";
 
 const Navbar = (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
