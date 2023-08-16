@@ -16,7 +16,7 @@ export const mapStyling = (darkMode) => {
 };
 
 // * Mapbox props
-export const mapProps = (accessToken, long, lat, mapStyle) => {
+export const mapPropsFunc = (accessToken, long, lat, mapStyle) => {
   return {
     mapboxAccessToken: accessToken,
     initialViewState: {

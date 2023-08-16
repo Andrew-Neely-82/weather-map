@@ -44,3 +44,30 @@
   margin: 12px;
   border-radius: 4px;
 }
+
+.mapboxgl-canvas {
+  border-radius: 1.5rem;
+  z-index: 0;
+}
+
+.mapboxgl-marker {
+  svg {
+    &:active {
+      transform: translateY(-4px);
+      transition: 250ms ease;
+    }
+
+    path {
+      fill: red;
+    }
+  }
+}
+
+[aria-label="Map marker"].mapboxgl-marker {
+  z-index: 1;
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-attrib-inner {
+  display: none;
+}
