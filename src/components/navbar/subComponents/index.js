@@ -32,7 +32,6 @@ export const muiProps = {
       },
     },
     className: "brand",
-    text: "Weather Map",
   },
 
   box: {

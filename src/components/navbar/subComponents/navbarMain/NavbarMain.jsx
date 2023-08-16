@@ -4,9 +4,10 @@ import { DarkModeContext } from "../../../../context/darkmode";
 import { DarkModeSwitch, SearchAndToggle } from "../import";
 import { muiProps, switchPropsFunc } from "../index";
 import IconButtonGroup from "./IconButtonGroup";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const NavbarMain = (props) => {
+  const [location, setLocation] = useState("Weather for Austin, TX");
   const navItems = ["Home", "About", "Contact"];
   const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
@@ -15,11 +16,16 @@ const NavbarMain = (props) => {
   const switchProps = switchPropsFunc(darkMode, toggleDarkMode);
   const iconProps = iconPropsFunc(props);
 
+  const handleLocation = (lat, long) => {
+    
+    setLocation(location);
+  };
+
   return (
     <AppBar component="nav">
       <Toolbar {...toolbarProps}>
         <IconButtonGroup iconProps={iconProps} />
-        <Typography {...muiProps.typography} />
+        <Typography {...muiProps.typography} text={location} />
         <Button>Get Weather</Button>
         <Box {...muiProps.box} className="buttons">
           {navItems.map((item) => (
