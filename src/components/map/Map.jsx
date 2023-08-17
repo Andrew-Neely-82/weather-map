@@ -6,6 +6,7 @@ import "./style.scss";
 import "mapbox-gl/dist/mapbox-gl.css";
 import ReactMapGL, { FullscreenControl, GeolocateControl, Layer, Marker, NavigationControl, Source, useMap } from "react-map-gl";
 import NavbarMain from "../navbar/subComponents/navbarMain/NavbarMain";
+import { SearchAndToggle } from "../navbar/subComponents/import";
 
 const Map = (props) => {
   const [location, setLocation] = useState("Austin, TX");
@@ -40,6 +41,14 @@ const Map = (props) => {
     // Update the location state
     setLocation(position);
   };
+
+  const updateLocation = (newLocation) => {
+    setLocation(newLocation);
+  };
+
+  <SearchAndToggle address={location} setAddress={updateLocation} />
+
+  // const searchBar = document.getElementById("search").value;
 
   return (
     <div className="Map__">

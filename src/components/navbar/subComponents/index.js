@@ -75,7 +75,6 @@ export const searchToggleProps = (props) => {
       },
     },
     input: {
-      placeholder: "Search City...",
       style: {
         width: "20rem",
       },

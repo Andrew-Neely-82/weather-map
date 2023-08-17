@@ -1,9 +1,31 @@
 import { Search, SearchIconWrapper, StyledInputBase } from "../../functions/Search";
 import SearchIcon from "@mui/icons-material/Search";
 import { searchToggleProps } from "../index";
+import { useEffect, useState } from "react";
 
 const SearchAndToggle = (props) => {
+  const [search, setSearch] = useState("Search City...");
+  const [inputValue, setInputValue] = useState("");
+
   const propList = searchToggleProps(props);
+
+  useEffect(() => {
+    // Update the search state when the address prop changes
+    setSearch(props.address);
+  }, [props.address]);
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      // Handle the action you want to perform on Enter key press
+      setInputValue(inputValue);
+      console.log(inputValue);
+      props.setAddress(inputValue);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   return (
     <div {...propList.container}>
@@ -11,7 +33,7 @@ const SearchAndToggle = (props) => {
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
-        <StyledInputBase inputProps={{ "aria-label": "search" }} {...propList.input} />
+        <StyledInputBase id="search" onChange={handleInputChange} onKeyDown={handleKeyDown} inputProps={{ "aria-label": "search" }} {...propList.input} placeholder={search} />
       </Search>
     </div>
   );

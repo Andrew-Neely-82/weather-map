@@ -56,7 +56,7 @@ const NavbarMain = (props) => {
             <Button key={item} sx={{ color: "#fff" }} text={item} />
           ))}
         </Box>
-        <SearchAndToggle searchTheme={searchTheme} />
+        <SearchAndToggle searchTheme={searchTheme} address={address} />
         <DarkModeSwitch {...switchProps} />
       </Toolbar>
     </AppBar>
