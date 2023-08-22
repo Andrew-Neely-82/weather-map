@@ -46,6 +46,25 @@ const Map = (props) => {
     setLocation(newLocation);
   };
 
+  const onGeolocate = (result) => {
+    // The geolocate control doesn't provide direct access to the updated location.
+    // You need to extract the location from the result object.
+    const { coords } = result;
+    const { longitude, latitude } = coords;
+
+    // Set the new view state
+    setViewState({
+      ...viewState,
+      longitude,
+      latitude,
+    });
+
+    const position = [longitude, latitude];
+
+    // Update the location state
+    setLocation(position);
+  };
+
   <SearchAndToggle address={location} setAddress={updateLocation} style={{ display: "none" }} />;
 
   // const searchBar = document.getElementById("search").value;
@@ -56,12 +75,11 @@ const Map = (props) => {
         <h3>Global Map</h3>
         {/* <Mapbox {...props} reuseMaps /> */}
         <ReactMapGL id="mapData" {...viewState} style={{ height: "400px" }} onMove={(e) => setViewState(e.viewState)} mapboxAccessToken={accessToken} mapStyle={mapStyle}>
-          <FullscreenControl />
           <Marker longitude={viewState.longitude} latitude={viewState.latitude} draggable onDragEnd={onMarkerDragEnd} />
           {/* <Source /> */}
           {/* <Layer /> */}
           <NavigationControl />
-          <GeolocateControl />
+          <GeolocateControl onGeolocate={onGeolocate} />
         </ReactMapGL>
         <NavbarMain location={location} />
       </div>

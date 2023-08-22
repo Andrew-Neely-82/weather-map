@@ -15,7 +15,7 @@ const App = () => {
   document.getElementById("root").style.background = bodyBackground;
 
   const track = document.querySelectorAll(".MuiSwitch-track");
-  const trackColor = darkMode ? "white" : "#2f2f2f";
+  const trackColor = darkMode ? "#aaa" : "#2f2f2f";
 
   for (let i = 0; i < track.length; i++) {
     track[i].style.background = trackColor;

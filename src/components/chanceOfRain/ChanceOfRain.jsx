@@ -14,13 +14,13 @@ const ChanceOfRain = () => {
           <RainTimeSlider time="1pm" percent={"16"} />
           <RainTimeSlider time="2pm" percent={"36"} />
           <RainTimeSlider time="3pm" percent={"64"} />
-          <RainTimeSlider time="4pm" percent={"75"} />
+          <RainTimeSlider time="4pm" percent={"82"} />
           <div className="background">
-            {rainTypes.map((rainType) => (
-              <div className="rainType">
+            {rainTypes.map((rainType, key) => (
+              <div className="rainType" key={key}>
                 <p>{rainType}</p>
                 <div className="line">
-                  <p>--------------------------------</p>
+                  <p>----------------------------</p>
                 </div>
               </div>
             ))}
