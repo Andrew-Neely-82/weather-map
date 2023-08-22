@@ -46,7 +46,7 @@ const Map = (props) => {
     setLocation(newLocation);
   };
 
-  <SearchAndToggle address={location} setAddress={updateLocation} />
+  <SearchAndToggle address={location} setAddress={updateLocation} style={{ display: "none" }} />;
 
   // const searchBar = document.getElementById("search").value;
 

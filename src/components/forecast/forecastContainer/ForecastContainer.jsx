@@ -10,7 +10,6 @@ const ForecastContainer = () => {
     <div className="ForecastContainer__">
       <div className="ForecastContainer__buttons-container">
         <ForecastOptions />
-
         <Switch />
       </div>
       <div className="ForecastContainer__container">

@@ -23,15 +23,17 @@ const Navbar = (props) => {
   const drawerProps = drawerPropsFunc(container, mobileOpen, handleDrawerToggle, drawerWidth);
 
   return (
-    <ThemeProvider theme={darkMode ? lightTheme : darkTheme}>
-      <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-        <NavbarMain handleDrawerToggle={handleDrawerToggle} />
-        <Box component="nav">
-          <Drawer {...drawerProps}>{drawer}</Drawer>
+    <div className="Navbar__">
+      <ThemeProvider theme={darkMode ? lightTheme : darkTheme}>
+        <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <NavbarMain handleDrawerToggle={handleDrawerToggle} />
+          <Box component="nav">
+            <Drawer {...drawerProps}>{drawer}</Drawer>
+          </Box>
         </Box>
-      </Box>
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   );
 };
 

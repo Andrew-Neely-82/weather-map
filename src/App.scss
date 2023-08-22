@@ -2,9 +2,24 @@
   box-sizing: border-box;
 }
 
+#root {
+  height: 100vh;
+}
+
+.App_ {
+  height: 100%;
+  padding: 2rem;
+}
+
 .content {
-  margin-top: 64px;
-  margin-inline: 2rem;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  // height: 100%;
+  border: none;
+  border-radius: 2rem;
+  padding: 2rem;
+  padding-inline: 2rem;
+  margin-top: 4rem;
 }
 
 .forecast-rain-container {

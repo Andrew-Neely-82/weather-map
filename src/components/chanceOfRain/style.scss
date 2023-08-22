@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-left: auto;
 
   &wrapper {
     display: flex;
@@ -29,4 +30,46 @@
 .MuiSlider-rail,
 .MuiSlider-track {
   color: lightblue !important;
+}
+
+.Box {
+  position: relative;
+
+  .background {
+    position: absolute;
+    top: -1rem;
+    left: -3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 15rem;
+    height: 100%;
+    z-index: -10;
+
+    .rainType {
+      display: grid;
+      grid-template-columns: 2.75rem auto;
+
+      p {
+        width: 3rem;
+        margin: 0;
+      }
+
+      .line {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-inline-start: 1rem;
+
+        p {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.ChanceOfRain__wrapper-span {
+  font-size: 12px;
 }
