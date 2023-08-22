@@ -1,15 +1,19 @@
+import { DarkModeContext } from "../../context/darkmode";
 import { Slider, Stack } from "@mui/material";
 import { propValues } from "./index";
+import { useContext } from "react";
 
 const RainTimeSlider = ({ percent, time }) => {
+  const { darkMode } = useContext(DarkModeContext);
+  const timeColor = darkMode ? "black" : "#919191";
   const props = propValues(percent);
 
   return (
     <div className="ChanceOfRain__wrapper">
       <Stack {...props.stack}>
-        <Slider {...props.slider} aria-label="Temperature" disabled />
+        <Slider {...props.slider} sx={{ filter: "drop-shadow(0 0 1px black)" }} aria-label="Temperature" disabled />
         <div className="ChanceOfRain__wrapper-span">
-          <span>{time}</span>
+          <span style={{ color: timeColor }}>{time}</span>
         </div>
       </Stack>
     </div>

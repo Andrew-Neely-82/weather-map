@@ -9,7 +9,7 @@ const App = () => {
   const { bodyBackground, textColor, heading, bg } = themes(darkMode);
 
   const headings = document.getElementsByTagName("h3");
-  const text = document.querySelectorAll("div, span, p");
+  const text = document.querySelectorAll("div, p");
 
   document.body.background = bodyBackground;
   document.getElementById("root").style.background = bodyBackground;
@@ -34,9 +34,7 @@ const App = () => {
       <div className="content" style={{ background: bg }}>
         <Forecast />
         <ChanceOfRain />
-        {/* <div className="GlobalContainer__"> */}
         <Map />
-        {/* </div> */}
       </div>
     </div>
   );

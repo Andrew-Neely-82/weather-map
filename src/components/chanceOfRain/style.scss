@@ -1,9 +1,19 @@
 .ChanceOfRain__ {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: auto;
+  width: 100%;
+  margin-left: 4rem;
+
+  h3 {
+    top: -3rem;
+    left: -3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 4rem;
+    // margin-left: -3rem;
+  }
 
   &wrapper {
     display: flex;
@@ -35,15 +45,16 @@
 
 .Box {
   position: relative;
+  margin-top: 1rem;
 
   .background {
     position: absolute;
-    top: -2rem;
+    top: -30px;
     left: -4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 18rem;
+    width: 16.75rem;
     height: 350px;
     border-radius: 1rem;
     padding: 1rem;
@@ -64,7 +75,13 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        // margin-inline-start: 1rem;
+
+        hr {
+          width: 100%;
+          height: 1px;
+          border: 1px dashed;
+          margin: auto;
+        }
 
         p {
           width: 100%;
@@ -72,6 +89,17 @@
       }
     }
   }
+}
+
+.MuiSlider-rail,
+.MuiSlider-track {
+  width: 0.5rem !important;
+  border-radius: 10rem 10rem 0 0 !important;
+}
+
+.MuiSlider-rail {
+  color: #49585f !important;
+  opacity: 1 !important;
 }
 
 .ChanceOfRain__wrapper-span {
