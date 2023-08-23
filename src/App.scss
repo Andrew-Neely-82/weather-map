@@ -25,6 +25,11 @@
   > div:nth-child(even) {
     padding-left: 2rem;
   }
+
+  > div:nth-child(3),
+  > div:last-child {
+    padding-top: 2rem;
+  }
 }
 
 .forecast-rain-container {

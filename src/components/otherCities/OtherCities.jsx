@@ -1,44 +1,24 @@
+import City from "./City";
 import "./style.scss";
 
 const OtherCities = () => {
+  
+  const cityProps = {
+    country: "USA",
+    city: "New York",
+    condition: "Cloudy",
+    icon: "☁️",
+    temp: "72",
+  };
+
   return (
     <div className="OtherCities__">
       <h3>Other Cities</h3>
-      <div className="city-wrapper">
-        <div className="city-container">
-          <p className="country">US</p>
-          <p className="city">NYC</p>
-          <p className="condition">Mostly Sunny</p>
-        </div>
-        <div className="weather-condition-container">
-          <p className="weather-condition">sunny icon</p>
-          <p className="temperature">TEMP°F</p>
-        </div>
-      </div>
+      <City {...cityProps} />
       <br />
-      <div className="city-wrapper">
-        <div className="city-container">
-          <p className="country">US</p>
-          <p className="city">NYC</p>
-          <p className="condition">Mostly Sunny</p>
-        </div>
-        <div className="weather-condition-container">
-          <p className="weather-condition">sunny icon</p>
-          <p className="temperature">TEMP°F</p>
-        </div>
-      </div>
+      <City {...cityProps} />
       <br />
-      <div className="city-wrapper">
-        <div className="city-container">
-          <p className="country">US</p>
-          <p className="city">NYC</p>
-          <p className="condition">Mostly Sunny</p>
-        </div>
-        <div className="weather-condition-container">
-          <p className="weather-condition">sunny icon</p>
-          <p className="temperature">TEMP°F</p>
-        </div>
-      </div>
+      <City {...cityProps} />
     </div>
   );
 };
