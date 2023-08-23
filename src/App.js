@@ -1,6 +1,6 @@
 import ChanceOfRain from "./components/chanceOfRain/ChanceOfRain";
 import { DarkModeContext } from "./context/darkmode";
-import { Forecast, Map } from "./components/export";
+import { Forecast, Map, OtherCities } from "./components/export";
 import { useContext } from "react";
 import "./App.scss";
 
@@ -35,6 +35,7 @@ const App = () => {
         <Forecast />
         <ChanceOfRain />
         <Map />
+        <OtherCities />
       </div>
     </div>
   );

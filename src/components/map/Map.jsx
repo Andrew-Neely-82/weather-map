@@ -1,12 +1,11 @@
-import { buttonProps, icons, mapPropsFunc, mapStyling } from "./index";
-import { DarkModeContext } from "../../context/darkmode";
-import { Button } from "@mui/material";
-import { useContext, useState } from "react";
-import "./style.scss";
-import "mapbox-gl/dist/mapbox-gl.css";
-import ReactMapGL, { FullscreenControl, GeolocateControl, Layer, Marker, NavigationControl, Source, useMap } from "react-map-gl";
+import ReactMapGL, { GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 import NavbarMain from "../navbar/subComponents/navbarMain/NavbarMain";
+import { buttonProps, icons, mapPropsFunc, mapStyling } from "./index";
 import { SearchAndToggle } from "../navbar/subComponents/import";
+import { DarkModeContext } from "../../context/darkmode";
+import { useContext, useState } from "react";
+import "mapbox-gl/dist/mapbox-gl.css";
+import "./style.scss";
 
 const Map = (props) => {
   const [location, setLocation] = useState("Austin, TX");
@@ -73,11 +72,8 @@ const Map = (props) => {
     <div className="Map__">
       <div className="Map__container">
         <h3>Global Map</h3>
-        {/* <Mapbox {...props} reuseMaps /> */}
         <ReactMapGL id="mapData" {...viewState} style={{ height: "400px" }} onMove={(e) => setViewState(e.viewState)} mapboxAccessToken={accessToken} mapStyle={mapStyle}>
           <Marker longitude={viewState.longitude} latitude={viewState.latitude} draggable onDragEnd={onMarkerDragEnd} />
-          {/* <Source /> */}
-          {/* <Layer /> */}
           <NavigationControl />
           <GeolocateControl onGeolocate={onGeolocate} />
         </ReactMapGL>

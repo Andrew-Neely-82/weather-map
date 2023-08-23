@@ -60,7 +60,7 @@ export const buttonPropsFunc = (props) => {
 export const searchToggleProps = (props) => {
   return {
     container: {
-      className: "toggle/search",
+      className: "search-container",
       style: {
         display: "flex",
         justifyContent: "center",

@@ -5,14 +5,15 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  margin-left: 4rem;
+  margin-left: 4rem; // this and
+  padding-left: 1rem; // this allow for positioning without x scrolling
 
   h3 {
     top: -3rem;
     left: -3rem;
     margin-top: 0.5rem;
     margin-bottom: 4rem;
-    // margin-left: -3rem;
+    margin-left: -3rem; // needed to position left from parent
   }
 
   &wrapper {
