@@ -1,3 +1,6 @@
+import AddLocationIcon from "@mui/icons-material/AddLocation";
+import LocationOffIcon from "@mui/icons-material/LocationOff";
+
 // * Mabbox API key
 export const accessToken = process.env.REACT_APP_MAP_KEY;
 
@@ -33,4 +36,9 @@ export const buttonProps = {
   sx: {
     minWidth: "1.5rem",
   },
+};
+
+// * Changes the show marker svg
+export const makerVisibilityFunc = (markerVisible) => {
+  return markerVisible ? <LocationOffIcon /> : <AddLocationIcon />;
 };

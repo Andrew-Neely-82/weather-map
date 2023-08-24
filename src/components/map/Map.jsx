@@ -1,13 +1,11 @@
 import ReactMapGL, { GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 import NavbarMain from "../navbar/subComponents/navbarMain/NavbarMain";
-import { buttonProps, icons, mapPropsFunc, mapStyling } from "./index";
 import { SearchAndToggle } from "../navbar/subComponents/import";
 import { DarkModeContext } from "../../context/darkmode";
+import { makerVisibilityFunc, mapPropsFunc, mapStyling } from "./index";
 import { useContext, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./style.scss";
-import AddLocationIcon from "@mui/icons-material/AddLocation";
-import LocationOffIcon from "@mui/icons-material/LocationOff";
 
 const Map = () => {
   const [location, setLocation] = useState("Austin, TX");
@@ -43,10 +41,6 @@ const Map = () => {
     setLocation(position);
   };
 
-  const updateLocation = (newLocation) => {
-    setLocation(newLocation);
-  };
-
   const onGeolocate = (result) => {
     // The geolocate control doesn't provide direct access to the updated location.
     // You need to extract the location from the result object.
@@ -66,13 +60,11 @@ const Map = () => {
     setLocation(position);
   };
 
-  <SearchAndToggle address={location} setAddress={updateLocation} style={{ display: "none" }} />;
-
   const [markerVisible, setMarkerVisible] = useState(false);
   const handleAddMarker = () => {
     setMarkerVisible(!markerVisible);
   };
-  const makerVisibility = markerVisible ? <LocationOffIcon /> : <AddLocationIcon />;
+  const makerVisibility = makerVisibilityFunc(markerVisible);
 
   return (
     <div className="Map__">
