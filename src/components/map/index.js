@@ -1,44 +1,80 @@
 import AddLocationIcon from "@mui/icons-material/AddLocation";
 import LocationOffIcon from "@mui/icons-material/LocationOff";
 
-// * Mabbox API key
+// * Mapbox API key
 export const accessToken = process.env.REACT_APP_MAP_KEY;
 
-// * Map Styles
-export const lightMap = "mapbox://styles/mapbox/streets-v9";
-export const darkMap = "mapbox://styles/mapbox/navigation-night-v1";
+// * Marker onDragEnd Function for updating map and location state
+export function onMarkerDragEndFunc(setViewState, viewState, setLocation) {
+  return (event) => {
+    let { lngLat } = event;
 
-// * Map styling function
-export const mapStyling = (darkMode) => {
-  return darkMode ? lightMap : darkMap;
-};
+    const longitude = lngLat.lng;
+    const latitude = lngLat.lat;
 
-// * Mapbox props
-export const mapPropsFunc = (accessToken, long, lat, mapStyle) => {
-  return {
-    mapboxAccessToken: accessToken,
-    initialViewState: {
-      longitude: -97.7431,
-      latitude: 30.2672,
-      zoom: 6,
-    },
-    style: {
-      width: 700,
-      height: 400,
-      borderRadius: "1.5rem",
-    },
-    mapStyle: mapStyle,
+    // Set the new view state
+    setViewState({
+      ...viewState,
+      longitude,
+      latitude,
+    });
+
+    const position = [longitude, latitude];
+
+    // Update the location state
+    setLocation(position);
   };
-};
-
-export const buttonProps = {
-  variant: "contained",
-  sx: {
-    minWidth: "1.5rem",
-  },
-};
+}
 
 // * Changes the show marker svg
-export const makerVisibilityFunc = (markerVisible) => {
-  return markerVisible ? <LocationOffIcon /> : <AddLocationIcon />;
-};
+export const makerVisibilityFunc = (markerVisible) => (markerVisible ? <LocationOffIcon /> : <AddLocationIcon />);
+
+// * handles geolocation display on map
+export function onGeolocateFunc(setViewState, viewState, setLocation) {
+  return (result) => {
+    // The geolocate control doesn't provide direct access to the updated location.
+    // You need to extract the location from the result object.
+    const { coords } = result;
+    const { longitude, latitude } = coords;
+
+    // Set the new view state
+    setViewState({
+      ...viewState,
+      longitude,
+      latitude,
+    });
+
+    const position = [longitude, latitude];
+
+    // Update the location state
+    setLocation(position);
+  };
+}
+
+// * Map styling function
+const mapTheme = { lightMap: "mapbox://styles/mapbox/streets-v9", darkMap: "mapbox://styles/mapbox/navigation-night-v1" };
+export const mapStyling = (darkMode) => (darkMode ? mapTheme.lightMap : mapTheme.darkMap);
+
+// * Props for mapboxgl component
+export function reactMapGLPropsFunc(setViewState, accessToken, mapStyle) {
+  return {
+    id: "mapData",
+    style: {
+      height: "400px",
+    },
+    onMove: (e) => setViewState(e.viewState),
+    mapboxAccessToken: accessToken,
+    mapStyle: mapStyle,
+  };
+}
+
+// * Props for marker
+export function markerPropsFunc(viewState, onMarkerDragEnd) {
+  return {
+    id: "map-marker",
+    longitude: viewState.longitude,
+    latitude: viewState.latitude,
+    draggable: true,
+    onDragEnd: onMarkerDragEnd,
+  };
+}
