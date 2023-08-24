@@ -2,7 +2,6 @@ import City from "./City";
 import "./style.scss";
 
 const OtherCities = () => {
-  
   const cityProps = {
     country: "USA",
     city: "New York",
