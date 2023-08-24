@@ -1,18 +1,20 @@
-import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkmode";
+import { themeStyles } from "./index";
+import { useContext } from "react";
 
 const City = ({ country, city, condition, icon, temp }) => {
   const { darkMode } = useContext(DarkModeContext);
-  const theme = darkMode ? "#fff" : "#fff";
 
-  const Para = ({ className, text }) => (
-    <p className={className} style={{ color: theme }}>
+  const bg = darkMode ? themeStyles.light.background : themeStyles.dark.background;
+
+  const Para = ({ className, style, text }) => (
+    <p className={className} style={style}>
       {text}
     </p>
   );
 
   return (
-    <div className="city-wrapper">
+    <div className="city-wrapper" style={{ background: bg }}>
       <div className="city-container">
         <Para className="country" text={country} />
         <Para className="city" text={city} />
