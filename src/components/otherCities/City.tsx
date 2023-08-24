@@ -1,17 +1,25 @@
 import { DarkModeContext } from "../../context/darkmode";
+import React, { useContext } from "react";
 import { themeStyles } from "./index";
-import { useContext } from "react";
 
-const City = ({ country, city, condition, icon, temp }) => {
+interface ParaProps {
+  className?: string;
+  style?: React.CSSProperties;
+  text: string;
+}
+
+const Para: React.FC<ParaProps> = ({ className, style, text }) => (
+  <p className={className} style={style}>
+    {text}
+  </p>
+);
+// prettier-ignore
+interface CityProps { country: string; city: string; condition: string; icon: string; temp: number; }
+
+const City: React.FC<CityProps> = ({ country, city, condition, icon, temp }) => {
   const { darkMode } = useContext(DarkModeContext);
 
   const bg = darkMode ? themeStyles.light.background : themeStyles.dark.background;
-
-  const Para = ({ className, style, text }) => (
-    <p className={className} style={style}>
-      {text}
-    </p>
-  );
 
   return (
     <div className="city-wrapper" style={{ background: bg }}>
