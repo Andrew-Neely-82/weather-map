@@ -5,13 +5,17 @@ import { DarkModeContext } from "../../context/darkmode";
 import { useContext, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./style.scss";
+import React from "react";
 
 const Map = () => {
   // * React Hooks
-  const [viewState, setViewState] = useState({ longitude: -97.7431, latitude: 30.2672, zoom: 6 });
+  // prettier-ignore
+  interface ViewState { longitude: number; latitude: number; zoom: number; }
+  const initialViewState: ViewState = { longitude: -97.7431, latitude: 30.2672, zoom: 6 };
+  const [viewState, setViewState] = useState<ViewState>(initialViewState);
   const [markerVisible, setMarkerVisible] = useState(false);
   const [location, setLocation] = useState("Austin, TX");
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode }: { darkMode: boolean } = useContext(DarkModeContext);
 
   // * Marker Visibility and handling
   const onMarkerDragEnd = onMarkerDragEndFunc(setViewState, viewState, setLocation);

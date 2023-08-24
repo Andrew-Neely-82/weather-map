@@ -41,8 +41,6 @@ const NavbarMain = (props) => {
     setAddress(props.location);
   }, [props.location]);
 
-
-
   getAddress();
 
   return (
