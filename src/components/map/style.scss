@@ -1,57 +1,15 @@
 .Map__ {
   .Map__container {
     position: relative;
-
-    .Map__container-buttons {
-      position: absolute;
-      top: 3rem;
-      left: 39.75rem;
-      display: flex;
-      flex-direction: column;
-      width: 1rem !important;
-
-      .MuiButton-root {
-        width: 3rem !important;
-        box-shadow: 0 0 0.5rem rgba(0 0 0 / 0.5) !important;
-      }
-
-      button:nth-child(1),
-      button:nth-child(3) {
-        margin-block: 1em;
-      }
-    }
   }
 }
 
-.mapbox-container {
-  position: relative;
-}
-
-.map-container {
-  max-height: 400px;
-  min-height: 200px;
-}
-
-.sidebar {
-  background-color: rgba(35, 55, 75, 0.9);
-  color: #fff;
-  padding: 6px 12px;
-  font-family: monospace;
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 12px;
-  border-radius: 4px;
-}
-
 // * mapbox
-
 .mapboxgl-canvas {
   border-radius: 1.5rem;
-  z-index: 0;
 }
 
+// * red marker
 .mapboxgl-marker {
   svg {
     &:active {
@@ -65,23 +23,75 @@
   }
 }
 
+// * allows marker to be on top of geolocation circle
 [aria-label="Map marker"].mapboxgl-marker {
   z-index: 1;
 }
 
-.mapboxgl-ctrl-bottom-left,
-.mapboxgl-ctrl-attrib-inner {
-  display: none;
-}
-
-.mapboxgl-ctrl {
-  button {
-    cursor: pointer;
+// * mapbox bottom left
+.mapboxgl-ctrl-bottom-left {
+  .mapboxgl-ctrl-logo {
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
-.mapboxgl-ctrl-compass {
+// * map box bottom right
+.mapboxgl-ctrl-attrib-inner {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 17rem;
+  font-size: 0.75rem;
+  text-align: center;
+  border: none;
+  border-radius: 1rem;
+  background-color: rgba(0 0 0 / 0.25);
+
+  a {
+    color: lightgray !important;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+
+  @media (max-width: 414px) {
+    bottom: 2rem;
+    right: auto;
+    width: 10rem;
+    padding-inline: 2px;
+  }
+}
+
+.marker-toggle {
+  position: absolute;
+  top: 9rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 29px;
+  background-color: white;
+  border: none;
+  border-radius: 0.25rem;
+
+  svg {
+    fill: #333;
+  }
+}
+
+.mapboxgl-ctrl-group,
+.marker-toggle {
+  filter: drop-shadow(0 0 2px rgba(0 0 0 / 0.5));
+  margin-right: 1rem !important;
+  cursor: pointer;
+
   span {
     cursor: pointer;
   }
 }
+
+

@@ -1,8 +1,3 @@
-import ZoomInIcon from "@mui/icons-material/ZoomIn";
-import ZoomOutIcon from "@mui/icons-material/ZoomOut";
-import AddLocationIcon from "@mui/icons-material/AddLocation";
-import WrongLocationOutlinedIcon from "@mui/icons-material/WrongLocationOutlined";
-
 // * Mabbox API key
 export const accessToken = process.env.REACT_APP_MAP_KEY;
 
@@ -32,9 +27,6 @@ export const mapPropsFunc = (accessToken, long, lat, mapStyle) => {
     mapStyle: mapStyle,
   };
 };
-
-// * Buttons and Icons
-export const icons = [<ZoomInIcon />, <ZoomOutIcon />, <AddLocationIcon />, <WrongLocationOutlinedIcon />];
 
 export const buttonProps = {
   variant: "contained",

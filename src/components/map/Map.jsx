@@ -6,8 +6,10 @@ import { DarkModeContext } from "../../context/darkmode";
 import { useContext, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./style.scss";
+import AddLocationIcon from "@mui/icons-material/AddLocation";
+import LocationOffIcon from "@mui/icons-material/LocationOff";
 
-const Map = (props) => {
+const Map = () => {
   const [location, setLocation] = useState("Austin, TX");
 
   const [viewState, setViewState] = useState({
@@ -66,16 +68,23 @@ const Map = (props) => {
 
   <SearchAndToggle address={location} setAddress={updateLocation} style={{ display: "none" }} />;
 
-  // const searchBar = document.getElementById("search").value;
+  const [markerVisible, setMarkerVisible] = useState(false);
+  const handleAddMarker = () => {
+    setMarkerVisible(!markerVisible);
+  };
+  const makerVisibility = markerVisible ? <LocationOffIcon /> : <AddLocationIcon />;
 
   return (
     <div className="Map__">
       <div className="Map__container">
         <h3>Global Map</h3>
         <ReactMapGL id="mapData" {...viewState} style={{ height: "400px" }} onMove={(e) => setViewState(e.viewState)} mapboxAccessToken={accessToken} mapStyle={mapStyle}>
-          <Marker longitude={viewState.longitude} latitude={viewState.latitude} draggable onDragEnd={onMarkerDragEnd} />
+          {markerVisible && <Marker id="map-marker" longitude={viewState.longitude} latitude={viewState.latitude} draggable onDragEnd={onMarkerDragEnd} />}
           <NavigationControl />
           <GeolocateControl onGeolocate={onGeolocate} />
+          <button className="marker-toggle" onClick={handleAddMarker}>
+            {makerVisibility}
+          </button>
         </ReactMapGL>
         <NavbarMain location={location} />
       </div>
