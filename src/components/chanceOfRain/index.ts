@@ -1,20 +1,20 @@
 interface PropValues {
   stack: {
     sx: {
-      alignContent: string;
-      alignItems: string;
-      height: number;
+      alignContent: any;
+      alignItems: any;
+      height: any;
     };
-    spacing: number;
+    spacing: any;
     direction: "row" | "row-reverse" | "column" | "column-reverse";
   };
   slider: {
     orientation: "vertical" | "horizontal" | undefined;
-    defaultValue: number;
+    defaultValue: any;
   };
 }
 
-export const propValues = (percent: number): PropValues => {
+export const propValues = (percent: any): PropValues => {
   return {
     stack: {
       sx: {

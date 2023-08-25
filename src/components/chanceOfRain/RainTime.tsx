@@ -1,15 +1,15 @@
 import { DarkModeContext } from "../../context/darkmode";
 import { Slider, Stack } from "@mui/material";
 import { propValues } from "./index";
-import { FC, useContext } from "react";
+import { useContext } from "react";
 import React from "react";
 
 interface RainTimeSliderProps {
   percent: number;
-  time: number;
+  time: string;
 }
 
-const RainTimeSlider: FC<RainTimeSliderProps> = ({ percent, time }) => {
+const RainTimeSlider: React.FC<RainTimeSliderProps> = ({ percent, time }) => {
   const { darkMode } = useContext(DarkModeContext);
   const timeColor = darkMode ? "black" : "#919191";
   const props = propValues(percent);

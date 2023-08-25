@@ -2,6 +2,7 @@ import { Today, Tomorrow, SevenDay } from "./import";
 import { useState } from "react";
 import Switch from "./switch/Switch";
 import ForecastOptions from "./forecastOptions/ForecastOptions";
+import React from "react";
 
 const ForecastContainer = () => {
   const [open, setOpen] = useState(false);

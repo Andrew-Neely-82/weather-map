@@ -61,6 +61,7 @@ export function reactMapGLPropsFunc(setViewState, accessToken, mapStyle) {
     id: "mapData",
     style: {
       height: "400px",
+      width: "100%",
     },
     onMove: (e) => setViewState(e.viewState),
     mapboxAccessToken: accessToken,
