@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
-import { DarkModeContext } from "./context/darkmode";
-import { elementThemes, themes } from "./appfunctions";
 import { ChanceOfRain, Forecast, Map, OtherCities } from "./components/export";
+import { elementThemes, themes } from "./appfunctions";
+import { DarkModeContext } from "./context/darkmode";
+import React, { useContext } from "react";
 import "./App.scss";
 
 const App: React.FC = () => {
-  const { darkMode } = useContext(DarkModeContext);
+  const darkModeContext = useContext(DarkModeContext);
+
+  if (!darkModeContext) {
+    return null;
+  }
+
+  const { darkMode } = darkModeContext;
   const { bodyBackground, textColor, heading, bg } = themes(darkMode);
   elementThemes(bodyBackground, darkMode, textColor, heading);
 

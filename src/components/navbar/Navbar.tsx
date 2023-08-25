@@ -7,8 +7,9 @@ import { darkTheme, lightTheme } from "./functions/themes";
 import { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
+import React from "react";
 
-const Navbar = (props) => {
+const Navbar: React.FC = (props: any) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { darkMode } = useContext(DarkModeContext);
   const { window } = props;

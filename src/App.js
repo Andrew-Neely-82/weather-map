@@ -23,13 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(require("react"));
-const darkmode_1 = require("./context/darkmode");
-const appfunctions_1 = require("./appfunctions");
 const export_1 = require("./components/export");
+const appfunctions_1 = require("./appfunctions");
+const darkmode_1 = require("./context/darkmode");
+const react_1 = __importStar(require("react"));
 require("./App.scss");
 const App = () => {
-    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    if (!darkModeContext) {
+        return null;
+    }
+    const { darkMode } = darkModeContext;
     const { bodyBackground, textColor, heading, bg } = (0, appfunctions_1.themes)(darkMode);
     (0, appfunctions_1.elementThemes)(bodyBackground, darkMode, textColor, heading);
     return (react_1.default.createElement("div", { className: "App_" },
