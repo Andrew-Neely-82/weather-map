@@ -11,27 +11,9 @@ interface CityPropsInterface {
 }
 
 const cityProps: CityPropsInterface[] = [
-  {
-    country: "USA",
-    city: "New York",
-    condition: "Cloudy",
-    icon: "☁️",
-    temp: 72,
-  },
-  {
-    country: "Canada",
-    city: "Toronto",
-    condition: "Rainy",
-    icon: "🌧️",
-    temp: 60,
-  },
-  {
-    country: "Mexico",
-    city: "Mexico City",
-    condition: "Sunny",
-    icon: "☀️",
-    temp: 60,
-  },
+  { country: "USA", city: "New York", condition: "Cloudy", icon: "☁️", temp: 72 },
+  { country: "Canada", city: "Toronto", condition: "Rainy", icon: "🌧️", temp: 60 },
+  { country: "Mexico", city: "Mexico City", condition: "Sunny", icon: "☀️", temp: 92 },
 ];
 
 const OtherCities = () => {

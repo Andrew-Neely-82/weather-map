@@ -7,27 +7,9 @@ const City_1 = __importDefault(require("./City"));
 const react_1 = __importDefault(require("react"));
 require("./style.scss");
 const cityProps = [
-    {
-        country: "USA",
-        city: "New York",
-        condition: "Cloudy",
-        icon: "☁️",
-        temp: 72,
-    },
-    {
-        country: "Canada",
-        city: "Toronto",
-        condition: "Rainy",
-        icon: "🌧️",
-        temp: 60,
-    },
-    {
-        country: "Mexico",
-        city: "Mexico City",
-        condition: "Sunny",
-        icon: "☀️",
-        temp: 60,
-    },
+    { country: "USA", city: "New York", condition: "Cloudy", icon: "☁️", temp: 72 },
+    { country: "Canada", city: "Toronto", condition: "Rainy", icon: "🌧️", temp: 60 },
+    { country: "Mexico", city: "Mexico City", condition: "Sunny", icon: "☀️", temp: 92 },
 ];
 const OtherCities = () => {
     return (react_1.default.createElement("div", { className: "OtherCities__" },

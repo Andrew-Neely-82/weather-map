@@ -2,6 +2,7 @@ import { DarkModeContext } from "../../context/darkmode";
 import { Box, Stack } from "@mui/material";
 import RainTimeSlider from "./RainTime";
 import { useContext } from "react";
+import React from "react";
 import "./style.scss";
 
 const ChanceOfRain = () => {
