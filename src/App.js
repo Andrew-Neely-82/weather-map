@@ -1,25 +1,42 @@
-import { ChanceOfRain, Forecast, Map, OtherCities } from "./components/export";
-import { DarkModeContext } from "./context/darkmode";
-import { elementThemes, themes } from "./appfunctions";
-import { useContext } from "react";
-import "./App.scss";
-
-const App = () => {
-  const { darkMode } = useContext(DarkModeContext);
-  const { bodyBackground, textColor, heading, bg } = themes(darkMode);
-  elementThemes(bodyBackground, darkMode, textColor, heading);
-
-
-  return (
-    <div className="App_">
-      <div className="content" style={{ background: bg }}>
-        <Forecast />
-        <ChanceOfRain />
-        <Map />
-        <OtherCities />
-      </div>
-    </div>
-  );
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
-
-export default App;
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(require("react"));
+const darkmode_1 = require("./context/darkmode");
+const appfunctions_1 = require("./appfunctions");
+const export_1 = require("./components/export");
+require("./App.scss");
+const App = () => {
+    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const { bodyBackground, textColor, heading, bg } = (0, appfunctions_1.themes)(darkMode);
+    (0, appfunctions_1.elementThemes)(bodyBackground, darkMode, textColor, heading);
+    return (react_1.default.createElement("div", { className: "App_" },
+        react_1.default.createElement("div", { className: "content", style: { background: bg } },
+            react_1.default.createElement(export_1.Forecast, null),
+            react_1.default.createElement(export_1.ChanceOfRain, null),
+            react_1.default.createElement(export_1.Map, null),
+            react_1.default.createElement(export_1.OtherCities, null))));
+};
+exports.default = App;
