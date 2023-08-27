@@ -53,10 +53,12 @@ const NavbarMain: React.FC<NavbarMainProps> = (props) => {
       <Toolbar {...toolbarProps}>
         <IconButtonGroup iconProps={iconProps} />
         <Typography {...muiProps.typography} text={address} />
-        <Button>Get Weather</Button>
+        <Button variant={"text"} color={"inherit"} text={""}>
+          Get Weather
+        </Button>
         <Box {...muiProps.box} className="buttons">
           {navItems.map((item) => (
-            <Button key={item} sx={{ color: "#fff" }} text={item} />
+            <Button key={item} sx={{ color: "#fff" }} text={item} variant={"text"} color={"inherit"} />
           ))}
         </Box>
         <SearchAndToggle searchTheme={searchTheme} address={address} />

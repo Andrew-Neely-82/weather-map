@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const material_1 = require("@mui/material");
 const react_1 = __importDefault(require("react"));
-const Button = ({ variant, color, href, startIcon, endIcon, onClick, text }) => {
+const Button = ({ variant, color, href, startIcon, endIcon, onClick, text, sx }) => {
     const props = {
         variant: variant,
         color: color,
@@ -13,6 +13,7 @@ const Button = ({ variant, color, href, startIcon, endIcon, onClick, text }) => 
         onClick: onClick,
         startIcon: startIcon,
         endIcon: endIcon,
+        sx: sx,
     };
     react_1.default.createElement(material_1.Button, Object.assign({}, props), text);
 };

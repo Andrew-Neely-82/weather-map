@@ -6,7 +6,7 @@ interface TypographyProps {
   component?: React.ElementType;
   sx?: object;
   className?: string;
-  text?: string;
+  text?: any;
 }
 
 const Typography: React.FC<TypographyProps> = ({ variant, component, sx, className, text }) => {

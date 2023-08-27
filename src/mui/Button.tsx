@@ -9,9 +9,10 @@ interface ButtonProps {
   endIcon?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   text: string;
+  sx: object;
 }
 
-const Button = ({ variant, color, href, startIcon, endIcon, onClick, text }: ButtonProps) => {
+const Button = ({ variant, color, href, startIcon, endIcon, onClick, text, sx }: ButtonProps) => {
   const props = {
     variant: variant,
     color: color,
@@ -19,6 +20,7 @@ const Button = ({ variant, color, href, startIcon, endIcon, onClick, text }: But
     onClick: onClick,
     startIcon: startIcon,
     endIcon: endIcon,
+    sx: sx,
   };
 
   <MuiButton {...props}>{text}</MuiButton>;
