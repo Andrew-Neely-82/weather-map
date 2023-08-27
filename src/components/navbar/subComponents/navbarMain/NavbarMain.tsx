@@ -5,22 +5,27 @@ import { DarkModeSwitch, SearchAndToggle } from "../import";
 import { muiProps, switchPropsFunc } from "../index";
 import IconButtonGroup from "./IconButtonGroup";
 import { useContext, useEffect, useState } from "react";
+import React from "react";
 
-const NavbarMain = (props) => {
-  // State to store the address
+interface NavbarMainProps {
+  location: number;
+}
+
+const NavbarMain: React.FC<NavbarMainProps> = (props) => {
   const [address, setAddress] = useState(props.location);
-  // console.log("Received location:", props.location);
-
   const navItems = ["Home", "About", "Contact"];
-  const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
 
+  // * Dark Mode Handling
+  const darkModeContext = useContext(DarkModeContext);
+  if (!darkModeContext) return null;
+  const { darkMode, toggleDarkMode } = darkModeContext;
+
+  // * Props
   const toolbarProps = toolbarPropsFunc(darkMode);
   const switchProps = switchPropsFunc(darkMode, toggleDarkMode);
   const iconProps = iconPropsFunc(props);
 
   const accessToken = process.env.REACT_APP_MAP_KEY;
-
-  // Construct the initial API URL using props.location
   const initialUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?types=address&access_token=${accessToken}`;
 
   const getAddress = async () => {
@@ -30,18 +35,18 @@ const NavbarMain = (props) => {
       if (data.features && data.features.length > 0) {
         const placeName = data.features[0].place_name;
         setAddress(placeName);
-        // props.setLocation(placeName);
       }
     } catch (error) {
       console.error("Error fetching address:", error);
     }
   };
 
+  getAddress();
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     setAddress(props.location);
   }, [props.location]);
-
-  getAddress();
 
   return (
     <AppBar component="nav">

@@ -11,7 +11,11 @@ import React from "react";
 
 const Navbar: React.FC = (props: any) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { darkMode } = useContext(DarkModeContext);
+
+  const darkModeContext = useContext(DarkModeContext);
+  if (!darkModeContext) return null;
+  const { darkMode } = darkModeContext;
+
   const { window } = props;
 
   const handleDrawerToggle = handleDrawerToggleFunc(setMobileOpen);

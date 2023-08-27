@@ -1,91 +1,90 @@
-export const muiProps = {
-  toolbar: {
-    sx: {
-      display: "flex",
-      justifyContent: "space-between",
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.switchPropsFunc = exports.searchToggleProps = exports.buttonPropsFunc = exports.toolPropsFunc = exports.muiProps = void 0;
+exports.muiProps = {
+    toolbar: {
+        sx: {
+            display: "flex",
+            justifyContent: "space-between",
+        },
     },
-  },
-
-  iconButton: {
-    color: "inherit",
-    edge: "start",
-    sx: {
-      mr: 5,
-      display: {
-        xl: "none",
-        lg: "none",
-        md: "none",
-        sm: "none",
-        xs: "block",
-      },
+    iconButton: {
+        color: "inherit",
+        edge: "start",
+        sx: {
+            mr: 5,
+            display: {
+                xl: "none",
+                lg: "none",
+                md: "none",
+                sm: "none",
+                xs: "block",
+            },
+        },
+        className: "pop-out",
     },
-    className: "pop-out",
-  },
-
-  typography: {
-    variant: "h6",
-    component: "div",
-    sx: {
-      display: {
-        xs: "none",
-        sm: "block",
-      },
+    typography: {
+        variant: "h6",
+        component: "div",
+        sx: {
+            display: {
+                xs: "none",
+                sm: "block",
+            },
+        },
+        className: "brand",
     },
-    className: "brand",
-  },
-
-  box: {
-    display: {
-      xl: "none",
-      lg: "none",
-      md: "none",
-      sm: "none",
-      xs: "none",
+    box: {
+        display: {
+            xl: "none",
+            lg: "none",
+            md: "none",
+            sm: "none",
+            xs: "none",
+        },
     },
-  },
 };
-
-export function toolPropsFunc(darkMode, themeLight, themeDark) {
-  return {
-    style: darkMode ? themeLight : themeDark,
-  };
+function toolPropsFunc(darkMode, themeLight, themeDark) {
+    return {
+        style: darkMode ? themeLight : themeDark,
+    };
 }
-
-export const buttonPropsFunc = (props) => {
-  return {
-    onClick: props.handleDrawerToggle,
-  };
+exports.toolPropsFunc = toolPropsFunc;
+const buttonPropsFunc = (props) => {
+    return {
+        onClick: props.handleDrawerToggle,
+    };
 };
-
-export const searchToggleProps = (props) => {
-  return {
-    container: {
-      className: "search-container",
-      style: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      },
-    },
-    search: {
-      style: props.searchTheme,
-      sx: {
-        color: "white",
-        borderRadius: "10rem",
-      },
-    },
-    input: {
-      style: {
-        width: "20rem",
-      },
-    },
-  };
+exports.buttonPropsFunc = buttonPropsFunc;
+const searchToggleProps = (props) => {
+    return {
+        container: {
+            className: "search-container",
+            style: {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            },
+        },
+        search: {
+            style: props.searchTheme,
+            sx: {
+                color: "white",
+                borderRadius: "10rem",
+            },
+        },
+        input: {
+            style: {
+                width: "20rem",
+            },
+        },
+    };
 };
-
-export const switchPropsFunc = (darkMode, toggleDarkMode) => {
-  return {
-    checked: !darkMode,
-    onChange: toggleDarkMode,
-  };
+exports.searchToggleProps = searchToggleProps;
+const switchPropsFunc = (darkMode, toggleDarkMode) => {
+    return {
+        checked: !darkMode,
+        onChange: toggleDarkMode,
+    };
 };
-
+exports.switchPropsFunc = switchPropsFunc;

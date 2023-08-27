@@ -15,7 +15,10 @@ require("./style.scss");
 const react_2 = __importDefault(require("react"));
 const Navbar = (props) => {
     const [mobileOpen, setMobileOpen] = (0, react_1.useState)(false);
-    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    if (!darkModeContext)
+        return null;
+    const { darkMode } = darkModeContext;
     const { window } = props;
     const handleDrawerToggle = (0, index_1.handleDrawerToggleFunc)(setMobileOpen);
     const drawer = (0, index_1.handleDrawer)(handleDrawerToggle);
