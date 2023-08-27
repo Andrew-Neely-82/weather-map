@@ -1,0 +1,31 @@
+import { Button as MuiButton } from "@mui/material";
+import React from "react";
+
+interface ButtonProps {
+  variant: "text" | "contained" | "outlined";
+  color: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
+  href?: string;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  text: string;
+}
+
+const Button = ({ variant, color, href, startIcon, endIcon, onClick, text }: ButtonProps) => {
+  const props = {
+    variant: variant,
+    color: color,
+    href: href,
+    onClick: onClick,
+    startIcon: startIcon,
+    endIcon: endIcon,
+  };
+
+  <MuiButton {...props}>{text}</MuiButton>;
+};
+
+export default Button;
+
+// * 'text' for anchor like look
+// * 'contained' for for normal button
+// * 'outlined' for outlined button
