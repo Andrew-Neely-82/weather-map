@@ -1,9 +1,15 @@
 import { Search, SearchIconWrapper, StyledInputBase } from "../../functions/Search";
 import SearchIcon from "@mui/icons-material/Search";
 import { searchToggleProps } from "../index";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const SearchAndToggle = (props) => {
+interface SearchAndToggleProps {
+  address: string;
+  setAddress: React.Dispatch<React.SetStateAction<string>>;
+  props: any;
+}
+
+const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
   const [search, setSearch] = useState("Search City...");
   const [inputValue, setInputValue] = useState("");
 
@@ -14,7 +20,7 @@ const SearchAndToggle = (props) => {
     setSearch(props.address);
   }, [props.address]);
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       // Handle the action you want to perform on Enter key press
       setInputValue(inputValue);
@@ -23,7 +29,7 @@ const SearchAndToggle = (props) => {
     }
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 

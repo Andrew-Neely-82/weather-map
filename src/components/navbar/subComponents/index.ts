@@ -57,7 +57,24 @@ export const buttonPropsFunc = (props: { handleDrawerToggle: () => void }) => {
   };
 };
 
-export const searchToggleProps = (props: { searchTheme: object }) => {
+interface SearchToggleProps {
+  container: {
+    className: string;
+    style: object;
+  };
+  search: {
+    style: object;
+    sx: {
+      color: string;
+      borderRadius: string;
+    };
+  };
+  input: {
+    style: object;
+  };
+}
+
+export const searchToggleProps = (props: any): SearchToggleProps => {
   return {
     container: {
       className: "search-container",
