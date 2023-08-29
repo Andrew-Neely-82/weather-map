@@ -28,7 +28,12 @@ const react_1 = __importStar(require("react"));
 const index_1 = require("./index");
 const Para = ({ className, style, text }) => (react_1.default.createElement("p", { className: className, style: style }, text));
 const City = ({ country, city, condition, icon, temp }) => {
-    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    if (!darkModeContext) {
+        // Handle the case where the context is not available
+        return null;
+    }
+    const { darkMode } = darkModeContext;
     const bg = darkMode ? index_1.themeStyles.light.background : index_1.themeStyles.dark.background;
     return (react_1.default.createElement("div", { className: "city-wrapper", style: { background: bg } },
         react_1.default.createElement("div", { className: "city-container" },
