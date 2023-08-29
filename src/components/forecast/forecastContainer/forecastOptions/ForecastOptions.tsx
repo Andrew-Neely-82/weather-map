@@ -1,13 +1,17 @@
 import { DarkModeContext } from "../../../../context/darkmode";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "@mui/material";
 
-const ForecastOptions = () => {
+const ForecastOptions: React.FC = () => {
   const [buttonStates, setButtonStates] = useState([false, false, true]);
-  const { darkMode } = useContext(DarkModeContext);
+  const darkModeContext = useContext(DarkModeContext);
+
+  if (!darkModeContext) return null;
+
+  const { darkMode } = darkModeContext;
   const theme = darkMode ? "#000" : "#fff";
 
-  const handleButtonChecked = (index) => {
+  const handleButtonChecked = (index: any) => {
     if (buttonStates[index]) return;
     const updatedStates = buttonStates.map((state, i) => (i === index ? !state : false));
     setButtonStates(updatedStates);
