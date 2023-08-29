@@ -23,7 +23,7 @@ const Navbar = (props) => {
     const handleDrawerToggle = (0, index_1.handleDrawerToggleFunc)(setMobileOpen);
     const drawer = (0, index_1.handleDrawer)(handleDrawerToggle);
     const drawerWidth = 240;
-    const container = window !== undefined ? () => window().document.body : undefined;
+    const container = window !== undefined ? window().document.body : null;
     const drawerProps = (0, index_1.drawerPropsFunc)(container, mobileOpen, handleDrawerToggle, drawerWidth);
     return (react_2.default.createElement("div", { className: "Navbar__" },
         react_2.default.createElement(styles_1.ThemeProvider, { theme: darkMode ? themes_1.lightTheme : themes_1.darkTheme },

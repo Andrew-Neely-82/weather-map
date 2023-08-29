@@ -23,9 +23,9 @@ const Navbar: React.FC = (props: any) => {
   const drawer = handleDrawer(handleDrawerToggle);
   const drawerWidth = 240;
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = window !== undefined ? window().document.body : null;
 
-  const drawerProps = drawerPropsFunc(container:, mobileOpen, handleDrawerToggle, drawerWidth);
+  const drawerProps = drawerPropsFunc(container, mobileOpen, handleDrawerToggle, drawerWidth);
 
   return (
     <div className="Navbar__">
