@@ -6,8 +6,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import { darkTheme, lightTheme } from "./functions/themes";
 import { useContext, useState } from "react";
 import PropTypes from "prop-types";
-import "./style.scss";
 import React from "react";
+import "./style.scss";
 
 const Navbar: React.FC = (props: any) => {
   const [mobileOpen, setMobileOpen] = useState(false);

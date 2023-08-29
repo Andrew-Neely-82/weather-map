@@ -11,8 +11,8 @@ const styles_1 = require("@mui/material/styles");
 const themes_1 = require("./functions/themes");
 const react_1 = require("react");
 const prop_types_1 = __importDefault(require("prop-types"));
-require("./style.scss");
 const react_2 = __importDefault(require("react"));
+require("./style.scss");
 const Navbar = (props) => {
     const [mobileOpen, setMobileOpen] = (0, react_1.useState)(false);
     const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
