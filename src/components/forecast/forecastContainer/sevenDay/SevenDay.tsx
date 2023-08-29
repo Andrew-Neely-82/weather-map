@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Days from "./days/Days";
 
-const SevenDay = () => {
+const SevenDay: React.FC = () => {
   const [days, setDays] = useState(Array(6).fill(null));
 
   return (
@@ -9,7 +9,7 @@ const SevenDay = () => {
       {/* {days.map((day, key) => {
         <Days key={key} />;
       })} */}
-      <Days />
+      <Days day={""} condition={""} temp={10} />
     </div>
   );
 };

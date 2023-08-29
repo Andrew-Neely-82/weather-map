@@ -1,4 +1,6 @@
-const Today = () => {
+import React from 'react'
+
+const Today: React.FC = () => {
   return (
     <div>Today</div>
   )

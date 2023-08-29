@@ -1,4 +1,6 @@
-const Tomorrow = () => {
+import React from 'react'
+
+const Tomorrow :React.FC = () => {
   return (
     <div>Tomorrow</div>
   )

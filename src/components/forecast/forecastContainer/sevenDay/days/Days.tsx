@@ -1,4 +1,12 @@
-const Days = ({ day, condition, temp }) => {
+import React from "react";
+
+interface Props {
+  day: string;
+  condition: string;
+  temp: number;
+}
+
+const Days: React.FC<Props> = ({ day, condition, temp }) => {
   return (
     <div className="Day__">
       <span>{day}</span>
