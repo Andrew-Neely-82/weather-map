@@ -4,7 +4,7 @@ import { searchToggleProps } from "../index";
 import React, { useEffect, useState } from "react";
 
 interface SearchAndToggleProps {
-  address: string;
+  address: any;
   setAddress: React.Dispatch<React.SetStateAction<string>>;
   props: any;
 }

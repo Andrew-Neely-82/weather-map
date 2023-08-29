@@ -5,6 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const material_1 = require("@mui/material");
 const react_1 = __importDefault(require("react"));
+// interface ButtonProps {
+//   variant?: string;
+//   color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
+//   href?: string;
+//   startIcon?: React.ReactNode;
+//   endIcon?: React.ReactNode;
+//   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+//   text?: string;
+//   sx?: object;
+// }
 const Button = ({ variant, color, href, startIcon, endIcon, onClick, text, sx }) => {
     const props = {
         variant: variant,

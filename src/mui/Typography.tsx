@@ -2,7 +2,7 @@ import { Typography as MuiTypography } from "@mui/material";
 import React from "react";
 
 interface TypographyProps {
-  variant?: "inherit" | "body1" | "body2" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  variant?: string;
   component?: React.ElementType;
   sx?: object;
   className?: string;

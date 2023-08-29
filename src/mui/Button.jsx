@@ -1,18 +1,18 @@
 import { Button as MuiButton } from "@mui/material";
 import React from "react";
 
-interface ButtonProps {
-  variant: "text" | "contained" | "outlined";
-  color: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
-  href?: string;
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  text: string;
-  sx: object;
-}
+// interface ButtonProps {
+//   variant?: string;
+//   color?: "inherit" | "primary" | "secondary" | "success" | "error" | "info" | "warning";
+//   href?: string;
+//   startIcon?: React.ReactNode;
+//   endIcon?: React.ReactNode;
+//   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+//   text?: string;
+//   sx?: object;
+// }
 
-const Button = ({ variant, color, href, startIcon, endIcon, onClick, text, sx }: ButtonProps) => {
+const Button = ({ variant, color, href, startIcon, endIcon, onClick, text, sx }) => {
   const props = {
     variant: variant,
     color: color,

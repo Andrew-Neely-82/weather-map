@@ -52,10 +52,8 @@ const NavbarMain: React.FC<NavbarMainProps> = (props) => {
     <AppBar component="nav">
       <Toolbar {...toolbarProps}>
         <IconButtonGroup iconProps={iconProps} />
-        <Typography {...muiProps.typography} text={address} />
-        <Button variant={"text"} color={"inherit"} text={""}>
-          Get Weather
-        </Button>
+        <Typography {...muiProps.typography} text={address} component="div" variant="body1" />
+        <Button variant="text" color="inherit" text="Get Weather" />
         <Box {...muiProps.box} className="buttons">
           {navItems.map((item) => (
             <Button key={item} sx={{ color: "#fff" }} text={item} variant={"text"} color={"inherit"} />
