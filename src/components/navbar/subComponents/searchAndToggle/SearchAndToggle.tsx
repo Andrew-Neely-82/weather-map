@@ -2,6 +2,7 @@ import { Search, SearchIconWrapper, StyledInputBase } from "../../functions/Sear
 import SearchIcon from "@mui/icons-material/Search";
 import { searchToggleProps } from "../index";
 import React, { useEffect, useState } from "react";
+import { searchTheme } from "../navbarMain";
 
 interface SearchAndToggleProps {
   address: any;
@@ -39,7 +40,7 @@ const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
-        <StyledInputBase id="search" onChange={handleInputChange} onKeyDown={handleKeyDown} inputProps={{ "aria-label": "search" }} {...propList.input} placeholder={search} />
+        <StyledInputBase sx={searchTheme} id="search" onChange={handleInputChange} onKeyDown={handleKeyDown} inputProps={{ "aria-label": "search" }} {...propList.input} placeholder={search} />
       </Search>
     </div>
   );

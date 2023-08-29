@@ -30,6 +30,7 @@ const Search_1 = require("../../functions/Search");
 const Search_2 = __importDefault(require("@mui/icons-material/Search"));
 const index_1 = require("../index");
 const react_1 = __importStar(require("react"));
+const navbarMain_1 = require("../navbarMain");
 const SearchAndToggle = (props) => {
     const [search, setSearch] = (0, react_1.useState)("Search City...");
     const [inputValue, setInputValue] = (0, react_1.useState)("");
@@ -53,6 +54,6 @@ const SearchAndToggle = (props) => {
         react_1.default.createElement(Search_1.Search, Object.assign({}, propList.search),
             react_1.default.createElement(Search_1.SearchIconWrapper, null,
                 react_1.default.createElement(Search_2.default, null)),
-            react_1.default.createElement(Search_1.StyledInputBase, Object.assign({ id: "search", onChange: handleInputChange, onKeyDown: handleKeyDown, inputProps: { "aria-label": "search" } }, propList.input, { placeholder: search })))));
+            react_1.default.createElement(Search_1.StyledInputBase, Object.assign({ sx: navbarMain_1.searchTheme, id: "search", onChange: handleInputChange, onKeyDown: handleKeyDown, inputProps: { "aria-label": "search" } }, propList.input, { placeholder: search })))));
 };
 exports.default = SearchAndToggle;

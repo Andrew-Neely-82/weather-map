@@ -59,7 +59,13 @@ const NavbarMain: React.FC<NavbarMainProps> = (props) => {
             <Button key={item} sx={{ color: "#fff" }} text={item} variant={"text"} color={"inherit"} />
           ))}
         </Box>
-        <SearchAndToggle searchTheme={searchTheme} address={address} />
+        <SearchAndToggle
+          address={address}
+          setAddress={function (value: React.SetStateAction<string>): void {
+            throw new Error("Function not implemented.");
+          }}
+          props={undefined}
+        />
         <DarkModeSwitch {...switchProps} />
       </Toolbar>
     </AppBar>

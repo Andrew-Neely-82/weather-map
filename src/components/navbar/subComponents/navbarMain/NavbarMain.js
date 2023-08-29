@@ -58,7 +58,9 @@ const NavbarMain = (props) => {
             react_2.default.createElement(export_1.Typography, Object.assign({}, index_2.muiProps.typography, { text: address, component: "div", variant: "body1" })),
             react_2.default.createElement(export_1.Button, { variant: "text", color: "inherit", text: "Get Weather" }),
             react_2.default.createElement(export_1.Box, Object.assign({}, index_2.muiProps.box, { className: "buttons" }), navItems.map((item) => (react_2.default.createElement(export_1.Button, { key: item, sx: { color: "#fff" }, text: item, variant: "text", color: "inherit" })))),
-            react_2.default.createElement(import_1.SearchAndToggle, { searchTheme: index_1.searchTheme, address: address }),
+            react_2.default.createElement(import_1.SearchAndToggle, { address: address, setAddress: function (value) {
+                    throw new Error("Function not implemented.");
+                }, props: undefined }),
             react_2.default.createElement(import_1.DarkModeSwitch, Object.assign({}, switchProps)))));
 };
 exports.default = NavbarMain;
