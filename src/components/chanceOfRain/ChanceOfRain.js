@@ -11,7 +11,10 @@ const react_2 = __importDefault(require("react"));
 require("./style.scss");
 const ChanceOfRain = () => {
     const rainTypes = ["Heavy", "Rainy", "Sunny"];
-    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    if (!darkModeContext)
+        return null;
+    const { darkMode } = darkModeContext;
     const color = darkMode ? "#000" : "#919191";
     return (react_2.default.createElement("div", { className: "ChanceOfRain__" },
         react_2.default.createElement("h3", null, "Chance of Rain"),
@@ -22,7 +25,7 @@ const ChanceOfRain = () => {
                 react_2.default.createElement(RainTime_1.default, { time: "1pm", percent: 16 }),
                 react_2.default.createElement(RainTime_1.default, { time: "2pm", percent: 36 }),
                 react_2.default.createElement(RainTime_1.default, { time: "3pm", percent: 64 }),
-                react_2.default.createElement(RainTime_1.default, { time: "4pm", percent: 82, sx: { background: "red" } }),
+                react_2.default.createElement(RainTime_1.default, { time: "4pm", percent: 82 }),
                 react_2.default.createElement("div", { className: "background" }, rainTypes.map((rainType, key) => (react_2.default.createElement("div", { className: "rainType", key: key },
                     react_2.default.createElement("p", { style: { color } }, rainType),
                     react_2.default.createElement("div", { className: "line" },

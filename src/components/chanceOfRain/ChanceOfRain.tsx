@@ -7,8 +7,11 @@ import "./style.scss";
 
 const ChanceOfRain = () => {
   const rainTypes = ["Heavy", "Rainy", "Sunny"];
-  const { darkMode } = useContext(DarkModeContext);
+  const darkModeContext = useContext(DarkModeContext);
 
+  if (!darkModeContext) return null;
+
+  const { darkMode } = darkModeContext;
   const color = darkMode ? "#000" : "#919191";
 
   return (
@@ -21,7 +24,7 @@ const ChanceOfRain = () => {
           <RainTimeSlider time="1pm" percent={16} />
           <RainTimeSlider time="2pm" percent={36} />
           <RainTimeSlider time="3pm" percent={64} />
-          <RainTimeSlider time="4pm" percent={82} sx={{ background: "red" }} />
+          <RainTimeSlider time="4pm" percent={82} />
           <div className="background">
             {rainTypes.map((rainType, key) => (
               <div className="rainType" key={key}>
