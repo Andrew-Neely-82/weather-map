@@ -10,7 +10,8 @@ interface RainTimeSliderProps {
 }
 
 const RainTimeSlider: React.FC<RainTimeSliderProps> = ({ percent, time }) => {
-  const { darkMode } = useContext(DarkModeContext);
+  const darkModeContext = useContext(DarkModeContext);
+  const darkMode = darkModeContext?.darkMode || false;
   const timeColor = darkMode ? "black" : "#919191";
   const props = propValues(percent);
 

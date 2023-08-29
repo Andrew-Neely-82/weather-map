@@ -11,7 +11,7 @@ interface NavbarMainProps {
   location: number;
 }
 
-const NavbarMain: React.FC<NavbarMainProps> = (props) => {
+const NavbarMain: React.FC<NavbarMainProps> = (props, { handleDrawerToggle }) => {
   const [address, setAddress] = useState(props.location);
   const navItems = ["Home", "About", "Contact"];
 
@@ -61,7 +61,7 @@ const NavbarMain: React.FC<NavbarMainProps> = (props) => {
         </Box>
         <SearchAndToggle
           address={address}
-          setAddress={function (value: React.SetStateAction<string>): void {
+          setAddress={function (): void {
             throw new Error("Function not implemented.");
           }}
           props={undefined}

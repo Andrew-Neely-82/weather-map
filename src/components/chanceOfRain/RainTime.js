@@ -9,7 +9,8 @@ const index_1 = require("./index");
 const react_1 = require("react");
 const react_2 = __importDefault(require("react"));
 const RainTimeSlider = ({ percent, time }) => {
-    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    const darkMode = (darkModeContext === null || darkModeContext === void 0 ? void 0 : darkModeContext.darkMode) || false;
     const timeColor = darkMode ? "black" : "#919191";
     const props = (0, index_1.propValues)(percent);
     return (react_2.default.createElement("div", { className: "ChanceOfRain__wrapper" },
