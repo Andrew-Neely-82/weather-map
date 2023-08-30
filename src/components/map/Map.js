@@ -39,7 +39,11 @@ const Map = () => {
     const [viewState, setViewState] = (0, react_1.useState)(initialViewState);
     const [markerVisible, setMarkerVisible] = (0, react_1.useState)(false);
     const [location, setLocation] = (0, react_1.useState)("Austin, TX");
-    const { darkMode } = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    // * Dark Mode Context
+    const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
+    if (!darkModeContext)
+        return null;
+    const { darkMode } = darkModeContext;
     // * Marker Visibility and handling
     const onMarkerDragEnd = (0, index_1.onMarkerDragEndFunc)(setViewState, viewState, setLocation);
     const handleAddMarker = () => setMarkerVisible(!markerVisible);

@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import React from "react";
 
 interface NavbarMainProps {
-  location: number;
+  location: any;
 }
 
 const NavbarMain: React.FC<NavbarMainProps> = (props, { handleDrawerToggle }) => {

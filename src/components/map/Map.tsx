@@ -15,7 +15,11 @@ const Map = () => {
   const [viewState, setViewState] = useState<ViewState>(initialViewState);
   const [markerVisible, setMarkerVisible] = useState(false);
   const [location, setLocation] = useState("Austin, TX");
-  const { darkMode }: { darkMode: boolean } = useContext(DarkModeContext);
+
+  // * Dark Mode Context
+  const darkModeContext = useContext(DarkModeContext);
+  if (!darkModeContext) return null;
+  const { darkMode } = darkModeContext;
 
   // * Marker Visibility and handling
   const onMarkerDragEnd = onMarkerDragEndFunc(setViewState, viewState, setLocation);
