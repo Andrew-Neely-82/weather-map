@@ -11,7 +11,7 @@ const ForecastOptions: React.FC = () => {
   const { darkMode } = darkModeContext;
   const theme = darkMode ? "#000" : "#fff";
 
-  const handleButtonChecked = (index: any) => {
+  const handleButtonChecked = (index: number) => {
     if (buttonStates[index]) return;
     const updatedStates = buttonStates.map((state, i) => (i === index ? !state : false));
     setButtonStates(updatedStates);
@@ -19,7 +19,7 @@ const ForecastOptions: React.FC = () => {
 
   const props = {
     style: { color: theme },
-    variant: "text",
+    variant: "text" as const,
   };
 
   return (

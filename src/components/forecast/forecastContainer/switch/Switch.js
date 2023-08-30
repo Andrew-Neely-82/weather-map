@@ -1,4 +1,3 @@
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const material_1 = require("@mui/material");
 const styles_1 = require("@mui/material/styles");
