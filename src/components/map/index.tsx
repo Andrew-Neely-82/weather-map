@@ -96,4 +96,3 @@ export function markerPropsFunc(viewState: { longitude: number; latitude: number
     onDragEnd: onMarkerDragEnd,
   };
 }
-
