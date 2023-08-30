@@ -1,18 +1,19 @@
 import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface DrawerPropsFunc {
-  container: React.ReactNode;
-  open: boolean;
-  onClose: () => void;
-  ModalProps: boolean;
+  container?: any;
+  open?: any;
+  onClose?: () => any;
+  ModalProps?: any;
+  sx?: any;
 }
 
 interface DrawerProps {
-  handleDrawerToggle: () => void;
-  mobileOpen: boolean;
-  drawerWidth: number;
-  setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleDrawerToggle: () => any;
+  mobileOpen: any;
+  drawerWidth: any;
+  setMobileOpen: any;
 }
 
 export const handleDrawer: React.FC<DrawerProps> = ({ handleDrawerToggle, drawerWidth }) => {
@@ -37,7 +38,7 @@ export const handleDrawer: React.FC<DrawerProps> = ({ handleDrawerToggle, drawer
   );
 };
 
-export const drawerPropsFunc = (container: ReactNode, mobileOpen: boolean, handleDrawerToggle: () => void, drawerWidth: number) => {
+export const drawerPropsFunc = (container?: any, mobileOpen?: any, handleDrawerToggle?: () => void, drawerWidth?: any) => {
   return {
     container: container,
     variant: "temporary",
@@ -57,3 +58,4 @@ export const handleDrawerToggleFunc = (setMobileOpen: React.Dispatch<React.SetSt
     setMobileOpen((prevState) => !prevState);
   };
 };
+

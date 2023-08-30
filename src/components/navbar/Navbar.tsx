@@ -20,8 +20,14 @@ const Navbar: React.FC = (props: any) => {
 
   const handleDrawerToggle = handleDrawerToggleFunc(setMobileOpen);
 
-  const drawer = handleDrawer(handleDrawerToggle);
   const drawerWidth = 240;
+  
+  const drawer = handleDrawer({
+    handleDrawerToggle,
+    drawerWidth,
+    mobileOpen: undefined,
+    setMobileOpen: undefined,
+  });
 
   const container = window !== undefined ? window().document.body : null;
 
@@ -32,7 +38,7 @@ const Navbar: React.FC = (props: any) => {
       <ThemeProvider theme={darkMode ? lightTheme : darkTheme}>
         <Box sx={{ display: "flex" }}>
           <CssBaseline />
-          <NavbarMain handleDrawerToggle={handleDrawerToggle} />
+          <NavbarMain handleDrawerToggle={handleDrawerToggle} location={undefined} />
           <Box component="nav">
             <Drawer {...drawerProps}>{drawer}</Drawer>
           </Box>

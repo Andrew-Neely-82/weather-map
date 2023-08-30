@@ -21,15 +21,20 @@ const Navbar = (props) => {
     const { darkMode } = darkModeContext;
     const { window } = props;
     const handleDrawerToggle = (0, index_1.handleDrawerToggleFunc)(setMobileOpen);
-    const drawer = (0, index_1.handleDrawer)(handleDrawerToggle);
     const drawerWidth = 240;
+    const drawer = (0, index_1.handleDrawer)({
+        handleDrawerToggle,
+        drawerWidth,
+        mobileOpen: undefined,
+        setMobileOpen: undefined,
+    });
     const container = window !== undefined ? window().document.body : null;
     const drawerProps = (0, index_1.drawerPropsFunc)(container, mobileOpen, handleDrawerToggle, drawerWidth);
     return (react_2.default.createElement("div", { className: "Navbar__" },
         react_2.default.createElement(styles_1.ThemeProvider, { theme: darkMode ? themes_1.lightTheme : themes_1.darkTheme },
             react_2.default.createElement(material_1.Box, { sx: { display: "flex" } },
                 react_2.default.createElement(material_1.CssBaseline, null),
-                react_2.default.createElement(NavbarMain_1.default, { handleDrawerToggle: handleDrawerToggle }),
+                react_2.default.createElement(NavbarMain_1.default, { handleDrawerToggle: handleDrawerToggle, location: undefined }),
                 react_2.default.createElement(material_1.Box, { component: "nav" },
                     react_2.default.createElement(material_1.Drawer, Object.assign({}, drawerProps), drawer))))));
 };

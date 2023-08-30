@@ -2,9 +2,9 @@ import { Box as MuiBox } from "@mui/material";
 import React from "react";
 
 interface BoxProps {
-  className?: string;
-  display?: string;
-  children: React.ReactNode;
+  className?: any;
+  display?: any;
+  children: any;
 }
 
 const Box: React.FC<BoxProps> = ({ className, display, children }) => {

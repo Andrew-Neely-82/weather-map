@@ -9,6 +9,7 @@ import React from "react";
 
 interface NavbarMainProps {
   location: any;
+  handleDrawerToggle: () => any;
 }
 
 const NavbarMain: React.FC<NavbarMainProps> = (props, { handleDrawerToggle }) => {
