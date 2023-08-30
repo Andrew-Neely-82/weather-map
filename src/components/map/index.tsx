@@ -11,7 +11,7 @@ interface ViewState {
   latitude: number;
 }
 
-export function onMarkerDragEndFunc(setViewState: React.Dispatch<React.SetStateAction<ViewState>>, viewState: ViewState, setLocation: React.Dispatch<React.SetStateAction<number[]>>) {
+export const onMarkerDragEndFunc = (setViewState: React.Dispatch<React.SetStateAction<ViewState>>, viewState: ViewState, setLocation: any) => {
   return (event: any) => {
     let { lngLat } = event;
 
@@ -30,7 +30,7 @@ export function onMarkerDragEndFunc(setViewState: React.Dispatch<React.SetStateA
     // Update the location state
     setLocation(position);
   };
-}
+};
 
 // * Changes the show marker svg
 export const makerVisibilityFunc = (markerVisible: any) => (markerVisible ? <LocationOffIcon /> : <AddLocationIcon />);
@@ -41,7 +41,7 @@ interface ViewState {
   latitude: number;
 }
 
-export function onGeolocateFunc(setViewState: React.Dispatch<React.SetStateAction<ViewState>>, viewState: ViewState, setLocation: React.Dispatch<React.SetStateAction<number[]>>) {
+export function onGeolocateFunc(setViewState: React.Dispatch<React.SetStateAction<ViewState>>, viewState: ViewState, setLocation: React.Dispatch<React.SetStateAction<string>>) {
   return (result: any) => {
     const { coords } = result;
     const { longitude, latitude } = coords;
@@ -53,10 +53,9 @@ export function onGeolocateFunc(setViewState: React.Dispatch<React.SetStateActio
       latitude,
     });
 
-    const position = [longitude, latitude];
-
-    // Update the location state
-    setLocation(position);
+    // Update the location state with a placeholder value
+    const locationName = "Current Location"; // Replace with actual location name logic
+    setLocation(locationName);
   };
 }
 
@@ -97,3 +96,4 @@ export function markerPropsFunc(viewState: { longitude: number; latitude: number
     onDragEnd: onMarkerDragEnd,
   };
 }
+

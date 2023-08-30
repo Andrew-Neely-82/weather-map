@@ -9,7 +9,7 @@ const AddLocation_1 = __importDefault(require("@mui/icons-material/AddLocation")
 const LocationOff_1 = __importDefault(require("@mui/icons-material/LocationOff"));
 // * Mapbox API key
 exports.accessToken = process.env.REACT_APP_MAP_KEY;
-function onMarkerDragEndFunc(setViewState, viewState, setLocation) {
+const onMarkerDragEndFunc = (setViewState, viewState, setLocation) => {
     return (event) => {
         let { lngLat } = event;
         const longitude = lngLat.lng;
@@ -21,7 +21,7 @@ function onMarkerDragEndFunc(setViewState, viewState, setLocation) {
         // Update the location state
         setLocation(position);
     };
-}
+};
 exports.onMarkerDragEndFunc = onMarkerDragEndFunc;
 // * Changes the show marker svg
 const makerVisibilityFunc = (markerVisible) => (markerVisible ? react_1.default.createElement(LocationOff_1.default, null) : react_1.default.createElement(AddLocation_1.default, null));
@@ -33,9 +33,9 @@ function onGeolocateFunc(setViewState, viewState, setLocation) {
         // Set the new view state
         setViewState(Object.assign(Object.assign({}, viewState), { longitude,
             latitude }));
-        const position = [longitude, latitude];
-        // Update the location state
-        setLocation(position);
+        // Update the location state with a placeholder value
+        const locationName = "Current Location"; // Replace with actual location name logic
+        setLocation(locationName);
     };
 }
 exports.onGeolocateFunc = onGeolocateFunc;
