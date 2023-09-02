@@ -1,18 +1,15 @@
-import React, { useContext, useState } from "react";
+import { accessToken, makerVisibilityFunc, mapStyling, markerPropsFunc, onGeolocateFunc, onMarkerDragEndFunc, reactMapGLPropsFunc } from "./index";
 import ReactMapGL, { GeolocateControl, Marker, NavigationControl } from "react-map-gl";
 import NavbarMain from "../navbar/subComponents/navbarMain/NavbarMain";
 import { DarkModeContext } from "../../context/darkmode";
+import React, { useContext, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { accessToken, makerVisibilityFunc, mapStyling, markerPropsFunc, onGeolocateFunc, onMarkerDragEndFunc, reactMapGLPropsFunc } from "./index";
 import "./style.scss";
 
 const Map = () => {
   // React Hooks
-  interface ViewState {
-    longitude: number;
-    latitude: number;
-    zoom?: number;
-  }
+  // prettier-ignore
+  interface ViewState {longitude: number;latitude: number;zoom?: number;}
   const initialViewState: ViewState = { longitude: -97.7431, latitude: 30.2672, zoom: 6 };
   const [viewState, setViewState] = useState<ViewState>(initialViewState);
   const [markerVisible, setMarkerVisible] = useState(false);
@@ -48,7 +45,12 @@ const Map = () => {
             {makerVisibility}
           </button>
         </ReactMapGL>
-        <NavbarMain location={location} />
+        <NavbarMain
+          location={location}
+          handleDrawerToggle={() => {
+            throw new Error("Function not implemented.");
+          }}
+        />
       </div>
     </div>
   );

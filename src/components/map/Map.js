@@ -26,12 +26,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(require("react"));
+const index_1 = require("./index");
 const react_map_gl_1 = __importStar(require("react-map-gl"));
 const NavbarMain_1 = __importDefault(require("../navbar/subComponents/navbarMain/NavbarMain"));
 const darkmode_1 = require("../../context/darkmode");
+const react_1 = __importStar(require("react"));
 require("mapbox-gl/dist/mapbox-gl.css");
-const index_1 = require("./index");
 require("./style.scss");
 const Map = () => {
     const initialViewState = { longitude: -97.7431, latitude: 30.2672, zoom: 6 };
@@ -61,6 +61,8 @@ const Map = () => {
                 react_1.default.createElement(react_map_gl_1.NavigationControl, null),
                 react_1.default.createElement(react_map_gl_1.GeolocateControl, { onGeolocate: onGeolocate }),
                 react_1.default.createElement("button", { className: "marker-toggle", onClick: handleAddMarker }, makerVisibility)),
-            react_1.default.createElement(NavbarMain_1.default, { location: location }))));
+            react_1.default.createElement(NavbarMain_1.default, { location: location, handleDrawerToggle: () => {
+                    throw new Error("Function not implemented.");
+                } }))));
 };
 exports.default = Map;
