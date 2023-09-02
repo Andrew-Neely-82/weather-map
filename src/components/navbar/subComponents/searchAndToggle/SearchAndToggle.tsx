@@ -27,9 +27,7 @@ const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
     }
   };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
 
   const styledInputBaseProps = {
     sx: searchTheme,
@@ -47,7 +45,7 @@ const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
-        <StyledInputBase {...styledInputBaseProps} {...propList.input} placeholder={search} />
+        <StyledInputBase {...styledInputBaseProps} />
       </Search>
     </div>
   );

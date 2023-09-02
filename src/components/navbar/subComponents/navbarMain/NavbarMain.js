@@ -16,10 +16,11 @@ const export_1 = require("../../../../mui/export");
 const index_1 = require("./index");
 const darkmode_1 = require("../../../../context/darkmode");
 const import_1 = require("../import");
+const react_1 = require("react");
 const index_2 = require("../index");
 const IconButtonGroup_1 = __importDefault(require("./IconButtonGroup"));
-const react_1 = require("react");
 const react_2 = __importDefault(require("react"));
+require("./style.scss");
 const NavbarMain = (props, { handleDrawerToggle }) => {
     const [address, setAddress] = (0, react_1.useState)(props.location);
     const navItems = ["Home", "About", "Contact"];
