@@ -4,11 +4,8 @@ import { searchToggleProps } from "../index";
 import React, { useEffect, useState } from "react";
 import { searchTheme } from "../navbarMain";
 
-interface SearchAndToggleProps {
-  address: any;
-  setAddress: React.Dispatch<React.SetStateAction<string>>;
-  props: any;
-}
+// prettier-ignore
+interface SearchAndToggleProps { setAddress: React.Dispatch<React.SetStateAction<string>>; address: any;  props: any;}
 
 const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
   const [search, setSearch] = useState("Search City...");
@@ -34,13 +31,23 @@ const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
     setInputValue(event.target.value);
   };
 
+  const styledInputBaseProps = {
+    sx: searchTheme,
+    id: "search",
+    onChange: handleInputChange,
+    onKeyDown: handleKeyDown,
+    inputProps: { "aria-label": "search" },
+    ...propList.input,
+    placeholder: search,
+  };
+
   return (
     <div {...propList.container}>
       <Search {...propList.search}>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
-        <StyledInputBase sx={searchTheme} id="search" onChange={handleInputChange} onKeyDown={handleKeyDown} inputProps={{ "aria-label": "search" }} {...propList.input} placeholder={search} />
+        <StyledInputBase {...styledInputBaseProps} {...propList.input} placeholder={search} />
       </Search>
     </div>
   );

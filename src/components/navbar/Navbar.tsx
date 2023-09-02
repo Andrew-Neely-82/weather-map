@@ -21,7 +21,7 @@ const Navbar: React.FC = (props: any) => {
   const handleDrawerToggle = handleDrawerToggleFunc(setMobileOpen);
 
   const drawerWidth = 240;
-  
+
   const drawer = handleDrawer({
     handleDrawerToggle,
     drawerWidth,

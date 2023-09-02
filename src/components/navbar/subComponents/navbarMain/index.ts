@@ -12,13 +12,10 @@ export const iconPropsFunc = (props: any) => {
   return iconProps;
 };
 
-interface Themes {
-  background: string;
-  color: string;
-  boxShadow?: string;
-}
+// prettier-ignore
+interface Themes { background: string; color: string; boxShadow?: string; borderRadius?: string; }
 
 // * themes
 export const themeLight: Themes = { background: "#efefef", color: "black", boxShadow: "none" };
 export const themeDark: Themes = { background: "#121212", color: "white", boxShadow: "none" };
-export const searchTheme: Themes = { background: "#353535", color: "white !important" };
+export const searchTheme: Themes = { background: "#353535", color: "white !important", borderRadius: "10rem" };

@@ -17,4 +17,4 @@ exports.iconPropsFunc = iconPropsFunc;
 // * themes
 exports.themeLight = { background: "#efefef", color: "black", boxShadow: "none" };
 exports.themeDark = { background: "#121212", color: "white", boxShadow: "none" };
-exports.searchTheme = { background: "#353535", color: "white !important" };
+exports.searchTheme = { background: "#353535", color: "white !important", borderRadius: "10rem" };
