@@ -1,7 +1,7 @@
 import { Search, SearchIconWrapper, StyledInputBase } from "../../functions/Search";
 import SearchIcon from "@mui/icons-material/Search";
-import { searchToggleProps } from "../index";
 import React, { useEffect, useState } from "react";
+import { searchToggleProps } from "../index";
 import { searchTheme } from "../navbarMain";
 
 // prettier-ignore

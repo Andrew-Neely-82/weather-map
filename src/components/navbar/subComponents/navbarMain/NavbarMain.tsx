@@ -1,5 +1,5 @@
 import { AppBar, Button, Box, Toolbar, Typography } from "../../../../mui/export";
-import { iconPropsFunc, searchTheme, toolbarPropsFunc } from "./index";
+import { iconPropsFunc, initialUrlFunc, searchTheme, toolbarPropsFunc } from "./index";
 import { DarkModeContext } from "../../../../context/darkmode";
 import { DarkModeSwitch, SearchAndToggle } from "../import";
 import { useContext, useEffect, useState } from "react";
@@ -8,12 +8,10 @@ import IconButtonGroup from "./IconButtonGroup";
 import React from "react";
 import "./style.scss";
 
-interface NavbarMainProps {
-  location: any;
-  handleDrawerToggle: () => any;
-}
+// prettier-ignore
+interface NavbarMainProps { location: any; handleDrawerToggle: () => any;}
 
-const NavbarMain: React.FC<NavbarMainProps> = (props, { handleDrawerToggle }) => {
+const NavbarMain: React.FC<NavbarMainProps> = (props) => {
   const [address, setAddress] = useState(props.location);
   const navItems = ["Home", "About", "Contact"];
 
@@ -23,12 +21,12 @@ const NavbarMain: React.FC<NavbarMainProps> = (props, { handleDrawerToggle }) =>
   const { darkMode, toggleDarkMode } = darkModeContext;
 
   // * Props
-  const toolbarProps = toolbarPropsFunc(darkMode);
   const switchProps = switchPropsFunc(darkMode, toggleDarkMode);
+  const toolbarProps = toolbarPropsFunc(darkMode);
   const iconProps = iconPropsFunc(props);
 
-  const accessToken = process.env.REACT_APP_MAP_KEY;
-  const initialUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?types=address&access_token=${accessToken}`;
+  // * mapbox geo api
+  const initialUrl = initialUrlFunc(address);
 
   const getAddress = async () => {
     try {
@@ -63,7 +61,7 @@ const NavbarMain: React.FC<NavbarMainProps> = (props, { handleDrawerToggle }) =>
         </Box>
         <SearchAndToggle
           address={address}
-          setAddress={function (): void {
+          setAddress={(): void => {
             throw new Error("Function not implemented.");
           }}
           props={undefined}

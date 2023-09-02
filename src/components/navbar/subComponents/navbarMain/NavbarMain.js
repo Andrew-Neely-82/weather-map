@@ -21,7 +21,7 @@ const index_2 = require("../index");
 const IconButtonGroup_1 = __importDefault(require("./IconButtonGroup"));
 const react_2 = __importDefault(require("react"));
 require("./style.scss");
-const NavbarMain = (props, { handleDrawerToggle }) => {
+const NavbarMain = (props) => {
     const [address, setAddress] = (0, react_1.useState)(props.location);
     const navItems = ["Home", "About", "Contact"];
     // * Dark Mode Handling
@@ -30,11 +30,11 @@ const NavbarMain = (props, { handleDrawerToggle }) => {
         return null;
     const { darkMode, toggleDarkMode } = darkModeContext;
     // * Props
-    const toolbarProps = (0, index_1.toolbarPropsFunc)(darkMode);
     const switchProps = (0, index_2.switchPropsFunc)(darkMode, toggleDarkMode);
+    const toolbarProps = (0, index_1.toolbarPropsFunc)(darkMode);
     const iconProps = (0, index_1.iconPropsFunc)(props);
-    const accessToken = process.env.REACT_APP_MAP_KEY;
-    const initialUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?types=address&access_token=${accessToken}`;
+    // * mapbox geo api
+    const initialUrl = (0, index_1.initialUrlFunc)(address);
     const getAddress = () => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const response = yield fetch(initialUrl);
@@ -59,7 +59,7 @@ const NavbarMain = (props, { handleDrawerToggle }) => {
             react_2.default.createElement(export_1.Typography, Object.assign({}, index_2.muiProps.typography, { text: address, component: "div", variant: "body1" })),
             react_2.default.createElement(export_1.Button, { variant: "text", color: "inherit", text: "Get Weather" }),
             react_2.default.createElement(export_1.Box, Object.assign({}, index_2.muiProps.box, { className: "buttons" }), navItems.map((item) => (react_2.default.createElement(export_1.Button, { key: item, sx: { color: "#fff" }, text: item, variant: "text", color: "inherit" })))),
-            react_2.default.createElement(import_1.SearchAndToggle, { address: address, setAddress: function () {
+            react_2.default.createElement(import_1.SearchAndToggle, { address: address, setAddress: () => {
                     throw new Error("Function not implemented.");
                 }, props: undefined }),
             react_2.default.createElement(import_1.DarkModeSwitch, Object.assign({}, switchProps)))));
