@@ -41,18 +41,27 @@ const SearchAndToggle = (props) => {
     }, [props.address]);
     const handleKeyDown = (event) => {
         if (event.key === "Enter") {
-            // Handle the action you want to perform on Enter key press
-            setInputValue(inputValue);
-            console.log(inputValue);
-            props.setAddress(inputValue);
+            const inputElement = event.target;
+            setInputValue(inputElement.value);
+            props.setAddress(inputElement.value);
         }
     };
-    const handleInputChange = (event) => setInputValue(event.target.value);
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+    const handleClearClick = () => {
+        setInputValue("");
+        const searchElement = document.getElementById("search");
+        if (searchElement) {
+            searchElement.value = "";
+        }
+    };
     const styledInputBaseProps = Object.assign(Object.assign({ sx: navbarMain_1.searchTheme, id: "search", onChange: handleInputChange, onKeyDown: handleKeyDown, inputProps: { "aria-label": "search" } }, propList.input), { placeholder: search });
     return (react_1.default.createElement("div", Object.assign({}, propList.container),
         react_1.default.createElement(Search_1.Search, Object.assign({}, propList.search),
             react_1.default.createElement(Search_1.SearchIconWrapper, null,
                 react_1.default.createElement(Search_2.default, null)),
-            react_1.default.createElement(Search_1.StyledInputBase, Object.assign({}, styledInputBaseProps)))));
+            react_1.default.createElement(Search_1.StyledInputBase, Object.assign({}, styledInputBaseProps))),
+        inputValue && (react_1.default.createElement("button", { className: "clear", onClick: handleClearClick }, "X"))));
 };
 exports.default = SearchAndToggle;

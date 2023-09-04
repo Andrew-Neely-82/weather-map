@@ -1,5 +1,5 @@
 import { AppBar, Button, Box, Toolbar, Typography } from "../../../../mui/export";
-import { iconPropsFunc, initialUrlFunc, searchTheme, toolbarPropsFunc } from "./index";
+import { iconPropsFunc, initialUrlFunc, toolbarPropsFunc } from "./index";
 import { DarkModeContext } from "../../../../context/darkmode";
 import { DarkModeSwitch, SearchAndToggle } from "../import";
 import { useContext, useEffect, useState } from "react";

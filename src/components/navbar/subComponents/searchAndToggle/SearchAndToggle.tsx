@@ -4,8 +4,11 @@ import React, { useEffect, useState } from "react";
 import { searchToggleProps } from "../index";
 import { searchTheme } from "../navbarMain";
 
-// prettier-ignore
-interface SearchAndToggleProps { setAddress: React.Dispatch<React.SetStateAction<string>>; address: any;  props: any;}
+interface SearchAndToggleProps {
+  setAddress: React.Dispatch<React.SetStateAction<string>>;
+  address: any;
+  props: any;
+}
 
 const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
   const [search, setSearch] = useState("Search City...");
@@ -20,14 +23,23 @@ const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      // Handle the action you want to perform on Enter key press
-      setInputValue(inputValue);
-      console.log(inputValue);
-      props.setAddress(inputValue);
+      const inputElement = event.target as HTMLInputElement;
+      setInputValue(inputElement.value);
+      props.setAddress(inputElement.value);
     }
   };
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => setInputValue(event.target.value);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleClearClick = () => {
+    setInputValue("");
+    const searchElement = document.getElementById("search") as HTMLInputElement;
+    if (searchElement) {
+      searchElement.value = "";
+    }
+  };
 
   const styledInputBaseProps = {
     sx: searchTheme,
@@ -47,6 +59,11 @@ const SearchAndToggle: React.FC<SearchAndToggleProps> = (props) => {
         </SearchIconWrapper>
         <StyledInputBase {...styledInputBaseProps} />
       </Search>
+      {inputValue && (
+        <button className="clear" onClick={handleClearClick}>
+          X
+        </button>
+      )}
     </div>
   );
 };
