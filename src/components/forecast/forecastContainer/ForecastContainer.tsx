@@ -14,12 +14,10 @@ const ForecastContainer = () => {
         <Switch />
       </div>
       <div className="ForecastContainer__container">
-        {/* Today, Tomorrow, Next 7 days */}
-        {/* switch */}
+        <Today />
+        <Tomorrow />
+        <SevenDay />
       </div>
-      <Today />
-      <Tomorrow />
-      <SevenDay />
     </div>
   );
 };
