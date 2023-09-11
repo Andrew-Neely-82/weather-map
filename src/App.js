@@ -30,9 +30,8 @@ const react_1 = __importStar(require("react"));
 require("./App.scss");
 const App = () => {
     const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
-    if (!darkModeContext) {
+    if (!darkModeContext)
         return null;
-    }
     const { darkMode } = darkModeContext;
     const { bodyBackground, textColor, heading, bg } = (0, appfunctions_1.themes)(darkMode);
     (0, appfunctions_1.elementThemes)(bodyBackground, darkMode, textColor, heading);

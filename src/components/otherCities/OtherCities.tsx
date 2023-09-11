@@ -2,13 +2,8 @@ import City from "./City";
 import React from "react";
 import "./style.scss";
 
-interface CityPropsInterface {
-  country: string;
-  city: string;
-  condition: string;
-  icon: string;
-  temp: number;
-}
+// prettier-ignore
+interface CityPropsInterface { country: string; city: string; condition: string; icon: string; temp: number;}
 
 const cityProps: CityPropsInterface[] = [
   { country: "USA", city: "New York", condition: "Cloudy", icon: "☁️", temp: 72 },

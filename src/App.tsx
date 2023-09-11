@@ -6,10 +6,7 @@ import "./App.scss";
 
 const App: React.FC = () => {
   const darkModeContext = useContext(DarkModeContext);
-
-  if (!darkModeContext) {
-    return null;
-  }
+  if (!darkModeContext) return null;
 
   const { darkMode } = darkModeContext;
   const { bodyBackground, textColor, heading, bg } = themes(darkMode);
