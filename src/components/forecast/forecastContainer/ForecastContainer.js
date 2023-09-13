@@ -10,12 +10,13 @@ const react_1 = require("react");
 const react_2 = __importDefault(require("react"));
 const ForecastContainer = () => {
     const [open, setOpen] = (0, react_1.useState)(false);
+    const props = { today: "Monday", time: "11:42PM", temp: "16", feels: "12", wind: "NE", pressure: "30.12", humidity: "80" };
     return (react_2.default.createElement("div", { className: "ForecastContainer__" },
         react_2.default.createElement("div", { className: "ForecastContainer__buttons-container" },
             react_2.default.createElement(ForecastOptions_1.default, null),
             react_2.default.createElement(Switch_1.default, null)),
         react_2.default.createElement("div", { className: "ForecastContainer__container" },
-            react_2.default.createElement(import_1.Today, { today: "Monday", time: "11:42PM", temp: "16", feels: "12" }),
+            react_2.default.createElement(import_1.Today, Object.assign({}, props)),
             react_2.default.createElement(import_1.Tomorrow, null),
             react_2.default.createElement(import_1.SevenDay, null))));
 };

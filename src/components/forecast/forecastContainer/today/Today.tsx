@@ -2,9 +2,9 @@ import { DarkModeContext } from "../../../../context/darkmode";
 import React, { useContext } from "react";
 
 // prettier-ignore
-interface TodayProps { today: string; time?: string; temp?: string; feels?: string; }
+interface TodayProps { today: string; time?: string; temp?: string; feels?: string; wind? : string; pressure?: string; humidity?: string;}
 
-const Today: React.FC<TodayProps> = ({ today, time, temp, feels }) => {
+const Today: React.FC<TodayProps> = ({ today, time, temp, feels, wind, pressure, humidity }) => {
   const darkModeContext = useContext(DarkModeContext);
   if (!darkModeContext) return null;
   const { darkMode } = darkModeContext;
@@ -26,13 +26,13 @@ const Today: React.FC<TodayProps> = ({ today, time, temp, feels }) => {
         <span>Feels Like {feels}*F</span>
       </div>
       <div>
-        <span>Wind {}</span>
+        <span>Wind {wind}</span>
       </div>
       <div>
-        <span>Pressure {}</span>
+        <span>Pressure {pressure}</span>
       </div>
       <div>
-        <span>Humidity {}</span>
+        <span>Humidity {humidity}</span>
       </div>
     </div>
   );
