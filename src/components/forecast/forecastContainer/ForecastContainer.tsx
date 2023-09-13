@@ -14,7 +14,7 @@ const ForecastContainer = () => {
         <Switch />
       </div>
       <div className="ForecastContainer__container">
-        <Today />
+        <Today today="Monday" time="11:42PM" temp="16" feels="12" />
         <Tomorrow />
         <SevenDay />
       </div>

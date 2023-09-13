@@ -15,7 +15,7 @@ const ForecastContainer = () => {
             react_2.default.createElement(ForecastOptions_1.default, null),
             react_2.default.createElement(Switch_1.default, null)),
         react_2.default.createElement("div", { className: "ForecastContainer__container" },
-            react_2.default.createElement(import_1.Today, null),
+            react_2.default.createElement(import_1.Today, { today: "Monday", time: "11:42PM", temp: "16", feels: "12" }),
             react_2.default.createElement(import_1.Tomorrow, null),
             react_2.default.createElement(import_1.SevenDay, null))));
 };

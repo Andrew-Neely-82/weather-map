@@ -1,7 +1,10 @@
 import { DarkModeContext } from "../../../../context/darkmode";
 import React, { useContext } from "react";
 
-const Today: React.FC = () => {
+// prettier-ignore
+interface TodayProps { today: string; time?: string; temp?: string; feels?: string; }
+
+const Today: React.FC<TodayProps> = ({ today, time, temp, feels }) => {
   const darkModeContext = useContext(DarkModeContext);
   if (!darkModeContext) return null;
   const { darkMode } = darkModeContext;
@@ -12,9 +15,25 @@ const Today: React.FC = () => {
 
   return (
     <div className="today__">
-      <h5 className="today__day" style={titleStyle}>
-        Today
-      </h5>
+      <span className="today__day" style={titleStyle}>
+        {today}
+      </span>
+      <span className="today__day">{time}</span>
+      <div>
+        <span>{temp}*F</span>
+      </div>
+      <div>
+        <span>Feels Like {feels}*F</span>
+      </div>
+      <div>
+        <span>Wind {}</span>
+      </div>
+      <div>
+        <span>Pressure {}</span>
+      </div>
+      <div>
+        <span>Humidity {}</span>
+      </div>
     </div>
   );
 };

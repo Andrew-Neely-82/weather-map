@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const darkmode_1 = require("../../../../context/darkmode");
 const react_1 = __importStar(require("react"));
-const Today = () => {
+const Today = ({ today, time, temp, feels }) => {
     const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
     if (!darkModeContext)
         return null;
@@ -34,6 +34,22 @@ const Today = () => {
         color: darkMode ? "#fff" : "#000",
     };
     return (react_1.default.createElement("div", { className: "today__" },
-        react_1.default.createElement("h5", { className: "today__day", style: titleStyle }, "Today")));
+        react_1.default.createElement("span", { className: "today__day", style: titleStyle }, today),
+        react_1.default.createElement("span", { className: "today__day" }, time),
+        react_1.default.createElement("div", null,
+            react_1.default.createElement("span", null,
+                temp,
+                "*F")),
+        react_1.default.createElement("div", null,
+            react_1.default.createElement("span", null,
+                "Feels Like ",
+                feels,
+                "*F")),
+        react_1.default.createElement("div", null,
+            react_1.default.createElement("span", null, "Wind ")),
+        react_1.default.createElement("div", null,
+            react_1.default.createElement("span", null, "Pressure ")),
+        react_1.default.createElement("div", null,
+            react_1.default.createElement("span", null, "Humidity "))));
 };
 exports.default = Today;
