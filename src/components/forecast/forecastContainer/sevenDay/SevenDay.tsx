@@ -9,7 +9,12 @@ const SevenDay: React.FC = () => {
       {/* {days.map((day, key) => {
         <Days key={key} />;
       })} */}
-      <Days day={""} condition={""} temp={10} />
+      <Days day={"Tue"} condition={"Isolate storms"} temp={10} />
+      <Days day={"Wed"} condition={"light rain"} temp={10} />
+      <Days day={"Thu"} condition={"partly cloudy"} temp={10} />
+      <Days day={"Fri"} condition={"partly cloudy"} temp={10} />
+      <Days day={"Sat"} condition={"thunder storms"} temp={10} />
+      <Days day={"Sun"} condition={"rain"} temp={10} />
     </div>
   );
 };

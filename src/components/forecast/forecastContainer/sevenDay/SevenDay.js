@@ -31,7 +31,12 @@ const Days_1 = __importDefault(require("./days/Days"));
 const SevenDay = () => {
     const [days, setDays] = (0, react_1.useState)(Array(6).fill(null));
     return (react_1.default.createElement("div", { className: "SevenDay__" },
-        react_1.default.createElement(Days_1.default, { day: "", condition: "", temp: 10 })));
+        react_1.default.createElement(Days_1.default, { day: "Tue", condition: "Isolate storms", temp: 10 }),
+        react_1.default.createElement(Days_1.default, { day: "Wed", condition: "light rain", temp: 10 }),
+        react_1.default.createElement(Days_1.default, { day: "Thu", condition: "partly cloudy", temp: 10 }),
+        react_1.default.createElement(Days_1.default, { day: "Fri", condition: "partly cloudy", temp: 10 }),
+        react_1.default.createElement(Days_1.default, { day: "Sat", condition: "thunder storms", temp: 10 }),
+        react_1.default.createElement(Days_1.default, { day: "Sun", condition: "rain", temp: 10 })));
 };
 exports.default = SevenDay;
 // * uncomment when weather is figured out
