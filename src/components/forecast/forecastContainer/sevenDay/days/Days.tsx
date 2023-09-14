@@ -4,15 +4,16 @@ interface Props {
   day: string;
   condition: string;
   temp: number;
+  style?: React.CSSProperties;
 }
 
-const Days: React.FC<Props> = ({ day, condition, temp }) => {
+const Days: React.FC<Props> = ({ style, day, condition, temp }) => {
   return (
     <div className="Day__">
-      <span>{day}</span>
+      <span style={style}>{day}</span>
       <hr />
-      {condition}
-      <span>{temp}°F</span>
+      <span style={style}>{condition}</span>
+      <span style={style}>{temp}°F</span>
     </div>
   );
 };
