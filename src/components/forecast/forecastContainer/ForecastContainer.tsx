@@ -27,7 +27,7 @@ const ForecastContainer = () => {
       </div>
       <div className="ForecastContainer__container">
         <Today {...props} />
-        <Tomorrow />
+        {/* <Tomorrow /> */}
         <SevenDay />
       </div>
     </div>

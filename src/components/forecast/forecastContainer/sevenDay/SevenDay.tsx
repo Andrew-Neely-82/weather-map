@@ -17,7 +17,6 @@ const SevenDay: React.FC = () => {
       {/* {days.map((day, key) => {
         <Days key={key} />;
       })} */}
-
       <Days style={titleStyle} day={"Tue"} condition={"Isolate storms"} temp={10} />
       <Days style={titleStyle} day={"Wed"} condition={"light rain"} temp={10} />
       <Days style={titleStyle} day={"Thu"} condition={"partly cloudy"} temp={10} />

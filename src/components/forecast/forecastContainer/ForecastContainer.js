@@ -27,7 +27,6 @@ const ForecastContainer = () => {
             react_2.default.createElement(Switch_1.default, null)),
         react_2.default.createElement("div", { className: "ForecastContainer__container" },
             react_2.default.createElement(import_1.Today, Object.assign({}, props)),
-            react_2.default.createElement(import_1.Tomorrow, null),
             react_2.default.createElement(import_1.SevenDay, null))));
 };
 exports.default = ForecastContainer;

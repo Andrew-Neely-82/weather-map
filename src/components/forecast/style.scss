@@ -32,38 +32,34 @@
       }
     }
 
-    &container {
+    .ForecastContainer__container {
       position: relative;
       display: flex;
+      justify-content: space-between;
+      gap: 0;
 
       .SevenDay__ {
         display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
 
       .today__ {
         background: #bbd7ec;
       }
 
-      .forecast,
-      .air {
-        position: absolute;
-        top: 0.75rem;
-        color: #737277;
-        cursor: pointer;
-      }
+      .Day__ {
+        display: flex;
+        flex-direction: column;
+        background: #1b1b1d;
+        padding: 1em;
+        border: none;
+        border-radius: 1em;
 
-      .forecast {
-        left: 1rem;
-
-        &::before {
-          content: "test";
-          user-select: none;
+        hr {
+          width: 100%;
+          padding: 0 1em;
         }
-      }
-
-      .air {
-        position: absolute;
-        right: 1rem;
       }
     }
   }
