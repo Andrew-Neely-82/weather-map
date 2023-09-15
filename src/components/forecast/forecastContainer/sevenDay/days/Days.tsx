@@ -1,10 +1,10 @@
 import React from "react";
-
 interface Props {
   day: string;
-  condition: string;
+  condition: any;
   temp: number;
   style?: React.CSSProperties;
+  Sunset?: any;
 }
 
 const Days: React.FC<Props> = ({ style, day, condition, temp }) => {
