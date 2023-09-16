@@ -1,7 +1,7 @@
 import { DarkModeContext } from "../../../../context/darkmode";
 import React, { useContext, useState } from "react";
 import Days from "./days/Days";
-import { Lightning, PartlyCloudy } from "../../assets/svg/export";
+import { LightRain, Lightning, PartlyCloudy, Rain } from "../../assets/svg/export";
 
 const SevenDay: React.FC = () => {
   const darkModeContext = useContext(DarkModeContext);
@@ -19,15 +19,14 @@ const SevenDay: React.FC = () => {
         <Days key={key} />;
       })} */}
       <Days style={titleStyle} day={"Tue"} condition={"Isolate storms"} temp={10} />
-      <Days style={titleStyle} day={"Wed"} condition={"light rain"} temp={10} />
+      <Days style={titleStyle} day={"Wed"} condition={<LightRain />} temp={10} />
       <Days style={titleStyle} day={"Thu"} condition={<PartlyCloudy />} temp={10} />
       <Days style={titleStyle} day={"Fri"} condition={<PartlyCloudy />} temp={10} />
       <Days style={titleStyle} day={"Sat"} condition={<Lightning />} temp={10} />
       <Days style={titleStyle} day={"Sun"} condition={"rain"} temp={10} />
+      <Rain />
     </div>
   );
 };
 
 export default SevenDay;
-
-// * uncomment when weather is figured out

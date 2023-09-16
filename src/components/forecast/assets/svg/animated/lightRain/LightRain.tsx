@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 }
 
 const LightRain: React.FC<Props> = ({ style }) => {
