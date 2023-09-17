@@ -23,8 +23,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(require("react"));
 const darkmode_1 = require("../../../../../context/darkmode");
+const react_1 = __importStar(require("react"));
 const Days = ({ style, day, condition, temp }) => {
     const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
     if (!darkModeContext)

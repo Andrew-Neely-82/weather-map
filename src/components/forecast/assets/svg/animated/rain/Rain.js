@@ -17,11 +17,6 @@ const Rain = () => {
         width: "100%",
         viewBox: "0 0 64 64",
     };
-    const filter = {
-        id: "blur",
-        width: "200%",
-        height: "200%",
-    };
     const path = {
         fill: "#57A0EE",
         stroke: `${darkMode ? "black" : "white"}`,
@@ -36,7 +31,7 @@ const Rain = () => {
     };
     return (react_1.default.createElement("svg", Object.assign({}, svg),
         react_1.default.createElement("defs", null,
-            react_1.default.createElement("filter", Object.assign({}, filter),
+            react_1.default.createElement("filter", { id: "blur", width: "200%" },
                 react_1.default.createElement("feGaussianBlur", { in: "SourceAlpha", stdDeviation: "3" }),
                 react_1.default.createElement("feOffset", { dx: "0", dy: "4", result: "offsetblur" }),
                 react_1.default.createElement("feComponentTransfer", null,

@@ -14,12 +14,6 @@ const Rain: React.FC = () => {
     viewBox: "0 0 64 64",
   };
 
-  const filter = {
-    id: "blur",
-    width: "200%",
-    height: "200%",
-  };
-
   const path = {
     fill: "#57A0EE",
     stroke: `${darkMode ? "black" : "white"}`,
@@ -37,7 +31,7 @@ const Rain: React.FC = () => {
   return (
     <svg {...svg}>
       <defs>
-        <filter {...filter}>
+        <filter id="blur" width="200%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
           <feOffset dx="0" dy="4" result="offsetblur" />
           <feComponentTransfer>
@@ -64,4 +58,5 @@ const Rain: React.FC = () => {
     </svg>
   );
 };
+
 export default Rain;

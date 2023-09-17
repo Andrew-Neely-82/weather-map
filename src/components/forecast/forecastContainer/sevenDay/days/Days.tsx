@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
 import { DarkModeContext } from "../../../../../context/darkmode";
+import React, { useContext } from "react";
 
 //prettier-ignore
 interface Props { day: string; condition: any; temp: number; style?: React.CSSProperties; Sunset?: any;}
