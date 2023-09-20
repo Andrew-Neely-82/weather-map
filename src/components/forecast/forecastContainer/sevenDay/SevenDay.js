@@ -26,10 +26,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const export_1 = require("../../assets/svg/export");
 const darkmode_1 = require("../../../../context/darkmode");
 const react_1 = __importStar(require("react"));
 const Days_1 = __importDefault(require("./days/Days"));
-const export_1 = require("../../assets/svg/export");
 const SevenDay = () => {
     const darkModeContext = (0, react_1.useContext)(darkmode_1.DarkModeContext);
     if (!darkModeContext)
@@ -45,6 +45,7 @@ const SevenDay = () => {
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Thu", condition: react_1.default.createElement(export_1.PartlyCloudy, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Fri", condition: react_1.default.createElement(export_1.PartlyCloudy, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Sat", condition: react_1.default.createElement(export_1.Lightning, null), temp: 10 }),
-        react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Sun", condition: react_1.default.createElement(export_1.Rain, null), temp: 10 })));
+        react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Sun", condition: react_1.default.createElement(export_1.Rain, null), temp: 10 }),
+        react_1.default.createElement(export_1.CloudyDayOne, null)));
 };
 exports.default = SevenDay;

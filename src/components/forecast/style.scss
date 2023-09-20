@@ -31,43 +31,43 @@
         }
       }
     }
+  }
+}
 
-    .ForecastContainer__container {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 1rem;
+.ForecastContainer__container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
 
-      .SevenDay__ {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        gap: 1rem;
-      }
+  .SevenDay__ {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+  }
 
-      .today__ {
-        background: #bbd7ec;
-        border-radius: 1rem;
-        padding: 1rem;
-      }
+  .today__ {
+    background: #bbd7ec;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
 
-      .Day__ {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 6rem;
-        background: #1b1b1d;
-        padding: 1em;
-        border: none;
-        border-radius: 1em;
+  .Day__ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 6rem;
+    background: #1b1b1d;
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
 
-        hr {
-          width: 100%;
-          padding: 0 1em;
-        }
-      }
+    hr {
+      width: 100%;
+      padding: 0 1em;
     }
   }
 }
