@@ -46,6 +46,6 @@ const SevenDay = () => {
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Fri", condition: react_1.default.createElement(export_1.PartlyCloudy, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Sat", condition: react_1.default.createElement(export_1.Lightning, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Sun", condition: react_1.default.createElement(export_1.Rain, null), temp: 10 }),
-        react_1.default.createElement(export_1.CloudyDayOne, null)));
+        react_1.default.createElement(export_1.Day, null)));
 };
 exports.default = SevenDay;
