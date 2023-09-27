@@ -24,7 +24,7 @@ const SevenDay: React.FC = () => {
       <Days style={titleStyle} day={"Fri"} condition={<PartlyCloudy />} temp={10} />
       <Days style={titleStyle} day={"Sat"} condition={<Lightning />} temp={10} />
       <Days style={titleStyle} day={"Sun"} condition={<Rain />} temp={10} />
-      {/* <CloudyDayOne /> */}
+      <CloudyDayOne />
     </div>
   );
 };
