@@ -18,4 +18,3 @@ export const line = {
   y1: "0",
   y2: "3",
 };
-
