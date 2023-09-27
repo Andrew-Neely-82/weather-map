@@ -19,6 +19,7 @@ const Map = () => {
   const darkModeContext = useContext(DarkModeContext);
   if (!darkModeContext) return null;
   const { darkMode } = darkModeContext;
+  const title = darkMode ? "#000" : "#fff";
 
   // Marker Visibility and handling
   const onMarkerDragEnd = onMarkerDragEndFunc(setViewState, viewState, setLocation);
@@ -36,7 +37,7 @@ const Map = () => {
   return (
     <div className="Map__">
       <div className="Map__container">
-        <h3>Global Map</h3>
+        <h3 style={{ color: title }}>Global Map</h3>
         <ReactMapGL {...reactMapGLProps} {...viewState}>
           {markerVisible && <Marker {...markerProps} />}
           <NavigationControl />

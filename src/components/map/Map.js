@@ -43,6 +43,7 @@ const Map = () => {
     if (!darkModeContext)
         return null;
     const { darkMode } = darkModeContext;
+    const title = darkMode ? "#000" : "#fff";
     // Marker Visibility and handling
     const onMarkerDragEnd = (0, index_1.onMarkerDragEndFunc)(setViewState, viewState, setLocation);
     const handleAddMarker = () => setMarkerVisible(!markerVisible);
@@ -55,7 +56,7 @@ const Map = () => {
     const markerProps = (0, index_1.markerPropsFunc)(viewState, onMarkerDragEnd);
     return (react_1.default.createElement("div", { className: "Map__" },
         react_1.default.createElement("div", { className: "Map__container" },
-            react_1.default.createElement("h3", null, "Global Map"),
+            react_1.default.createElement("h3", { style: { color: title } }, "Global Map"),
             react_1.default.createElement(react_map_gl_1.default, Object.assign({}, reactMapGLProps, viewState),
                 markerVisible && react_1.default.createElement(react_map_gl_1.Marker, Object.assign({}, markerProps)),
                 react_1.default.createElement(react_map_gl_1.NavigationControl, null),
