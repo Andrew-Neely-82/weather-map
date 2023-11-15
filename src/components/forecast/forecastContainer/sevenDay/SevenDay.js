@@ -40,7 +40,7 @@ const SevenDay = () => {
     };
     // const [days, setDays] = useState(Array(6).fill(null));
     return (react_1.default.createElement("div", { className: "SevenDay__" },
-        react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Tue", condition: "Isolate storms", temp: 10 }),
+        react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Tue", condition: react_1.default.createElement(export_1.IsolatedStorms, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Wed", condition: react_1.default.createElement(export_1.LightRain, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Thu", condition: react_1.default.createElement(export_1.PartlyCloudy, null), temp: 10 }),
         react_1.default.createElement(Days_1.default, { style: titleStyle, day: "Fri", condition: react_1.default.createElement(export_1.PartlyCloudy, null), temp: 10 }),

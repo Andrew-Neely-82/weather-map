@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Day = exports.CloudyDayOne = exports.Rain = exports.Lightning = exports.LightRain = exports.PartlyCloudy = void 0;
+exports.IsolatedStorms = exports.Day = exports.CloudyDayOne = exports.Rain = exports.Lightning = exports.LightRain = exports.PartlyCloudy = void 0;
 var PartlyCloudy_1 = require("./animated/partlyCloudy/PartlyCloudy");
 Object.defineProperty(exports, "PartlyCloudy", { enumerable: true, get: function () { return __importDefault(PartlyCloudy_1).default; } });
 var LightRain_1 = require("./animated/lightRain/LightRain");
@@ -16,3 +16,5 @@ var CloudyDayOne_1 = require("./animated/CloudyDay1/CloudyDayOne");
 Object.defineProperty(exports, "CloudyDayOne", { enumerable: true, get: function () { return __importDefault(CloudyDayOne_1).default; } });
 var Day_1 = require("./animated/day/Day");
 Object.defineProperty(exports, "Day", { enumerable: true, get: function () { return __importDefault(Day_1).default; } });
+var IsolatedStorms_1 = require("./animated/isolatedStorms/IsolatedStorms");
+Object.defineProperty(exports, "IsolatedStorms", { enumerable: true, get: function () { return __importDefault(IsolatedStorms_1).default; } });

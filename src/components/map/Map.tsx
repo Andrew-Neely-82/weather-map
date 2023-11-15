@@ -6,7 +6,7 @@ import React, { useContext, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./style.scss";
 
-const Map = () => {
+const Map: React.FC = () => {
   // React Hooks
   // prettier-ignore
   interface ViewState {longitude: number;latitude: number;zoom?: number;}
